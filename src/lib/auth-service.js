@@ -5,8 +5,8 @@ class Auth {
     this.auth = axios.create({
       baseURL: process.env.REACT_APP_BASEURL,
       withCredentials: true,
-      // headers: {"Access-Control-Allow-Origin": "*"},
       headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       }
     })
