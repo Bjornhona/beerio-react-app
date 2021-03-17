@@ -4,7 +4,6 @@ class Auth {
   constructor() {
     this.auth = axios.create({
       baseURL: process.env.REACT_APP_BASEURL,
-      // baseURL: 'http://localhost:5000',
       withCredentials: true
     })
   }
@@ -27,7 +26,9 @@ class Auth {
   }
 
   me() {
-    return this.auth.get('/auth/me')
+    return this.auth.get('/auth/me', {
+      headers: {"Access-Control-Allow-Origin": "*"}
+    })
     .then(response => response.data)
   }
 }
