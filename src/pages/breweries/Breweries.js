@@ -1,35 +1,74 @@
-import React, {useEffect} from 'react';
-// import {Link} from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
 import { beerService } from '../../lib/beer-service';
 
 const Breweries = () => {
-  // const [breweriesData, setBreweriesData] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // console.log(breweriesData);
-  // console.log(isLoading);
+  const [breweriesData, setBreweriesData] = useState([]);
+  const [breweryData, setBreweryData] = useState([]);
+  const [zipCode, setZipCode] = useState("");
+  const [locationsData, setLocationsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // let ignore = false;
+    let ignore = false;
 
     const getBreweries = async () => await beerService.getBreweries()
-    .then(data => {
-      console.log(data)
-    })
-    // .then(data => {if (!ignore) {
-      // setBreweriesData(data);
-      // setIsLoading(false);
-    // }})
-    .catch(error => console.error('Error ingen data'));
+    .then(brewery => {if (!ignore) {
+      setBreweriesData(brewery);
+    }})
+    .then(() => setIsLoading(false))
+    .catch(error => console.error('Error: No data received from API'));
+
     getBreweries();
 
-    // return () => {ignore = true}
+    return () => {ignore = true}
   }, []);
 
+  const fetchBreweryAddress = (breweryId) => {
+    return beerService.getBrewery(breweryId)
+    .then(response => setBreweryData(response))
+    .catch(error => console.error('Error: No Brewery data received from API'));
+  }
+
+  const getLocations = () => {
+     return beerService.getLocations(zipCode)
+    .then(data => setLocationsData(data))
+    .catch(error => console.error('Error: No data received from API'));
+  }
+
+  const handleInputChange = (event) => setZipCode(event.target.value);
+
   return (
+    isLoading ? <p>Loading...</p> :
     <div>
-      <p>Breweries</p>
-      {/* <Link to={`/breweries/:${brewery.id}`} /> */}
+      <h2>Breweries</h2>
+      {breweriesData.map(brewery => {
+        return (
+          <p key={brewery.id} onClick={() => fetchBreweryAddress(brewery.id)}>{brewery.name}</p>
+        )
+      })}
+     {breweryData !== [] && breweryData.map(location => {
+       return (
+        <div key={location.id}>
+          <h4>{location.name}</h4>
+          <p>{location.latitude}</p>
+          <p>{location.longitude}</p>
+        </div>
+       )
+     })}
+     <div>
+       <h2>Get nearest Breweries based on your zip-code</h2>
+       <input type="text" placeholder="Enter your zip-code" value={zipCode} onChange={handleInputChange}/>
+       <button onClick={() => getLocations()}>Get Location</button>
+       {locationsData.map(nearbyBrewery => {
+         return (
+           <div key={nearbyBrewery.id}>
+           <h4>{nearbyBrewery.name}, {nearbyBrewery.locality}</h4>
+            <p>{nearbyBrewery.latitude}</p>
+            <p>{nearbyBrewery.longitude}</p>
+           </div>
+         )
+       })}
+     </div>
     </div>
   )
 }

@@ -4,38 +4,9 @@ class Auth {
   constructor() {
     this.auth = axios.create({
       baseURL: process.env.REACT_APP_BASEURL,
-      withCredentials: true,
-      headers: {
-        "Access-Control-Allow-Origin": "https://beerio-aa491.web.app/",
-        "Access-Control-Allow-Credentials": true,
-      }
+      withCredentials: true
     })
   }
-
-  // headers: {
-  //   "Access-Control-Allow-Origin": "https://beerio-aa491.web.app/",
-  //   "Access-Control-Allow-Credentials": true,
-  // }
-      // "Access-Control-Allow-Origin": "*",
-      // "Access-Control-Allow-Origin": "https://beerio-api-eu.herokuapp.com/",
-      // 'X-Requested-With': 'XMLHttpRequest',
-      // "Content-Type": "application/x-www-form-urlencoded"
-      // "Content-Type": "application/json"
-      // "origin": {
-      //   "scheme": auth,
-      //   "host": "",
-      //   "port": ""        
-      // }
-            // proxy: {
-      //   protocol: 'https',
-      //   host: '127.0.0.1',
-      //   port: 9000,
-      //   auth: {
-      //     username: 'mikeymike',
-      //     password: 'rapunz3l'
-      //   }
-      // }
-
 
   signup(user) {
     const { username, password } = user;
@@ -55,9 +26,7 @@ class Auth {
   }
 
   me() {
-    return this.auth.get('/auth/me', {
-      crossorigin: true
-  })
+    return this.auth.get('/auth/me')
     .then(response => response.data)
   }
 }

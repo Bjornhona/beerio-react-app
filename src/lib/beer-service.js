@@ -4,7 +4,6 @@ class BeerService {
   constructor() {
     this.beer = axios.create({
       baseURL: process.env.REACT_APP_BASEURL,
-      // baseURL: 'http://localhost:5000',
       withCredentials: true
     })
   }
@@ -35,6 +34,18 @@ class BeerService {
 
   getBreweries() {
     return this.beer.get('/beers/breweries')
+    .then(({data}) => data)
+    .catch(error => console.error('Error'));
+  }
+
+  getBrewery(brewerieId) {
+    return this.beer.get(`/beers/brewery/${brewerieId}/locations`)
+    .then(({data}) => data)
+    .catch(error => console.error('Error'));
+  }
+
+  getLocations(zipCode) {
+    return this.beer.get(`/beers/locations/${zipCode}`)
     .then(({data}) => data)
     .catch(error => console.error('Error'));
   }

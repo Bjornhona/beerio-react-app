@@ -24,20 +24,24 @@ const AuthContext = (props) => {
 
     const getAuthService = async () => {
       await authService.me()
-      .then((user) => {if (!ignore) {
-        setUser(user);
-        setIsLogged(true);
-        setIsLoading(false);
-      }})
+      .then(user => {
+        // console.log("User found as" + user);
+        if (!ignore) {
+          setUser(user);
+          setIsLogged(true);
+          setIsLoading(false);
+        }
+      })
       .catch((error) => {
+        // console.log("User not found and set to null");
         setIsLogged(false);
         setUser(null);
         setIsLoading(false);
-      })
+      });
     };
     getAuthService();
 
-    return () => ignore = true
+    return () => ignore = true;
   }, []);
 
   const handleSetUser = (user) => {
@@ -47,7 +51,7 @@ const AuthContext = (props) => {
 
   const handleLogOut = async () => {
     await authService.logout()
-    .then(()=>{
+    .then(() => {
       setIsLogged(false);
       setUser(null);
     })

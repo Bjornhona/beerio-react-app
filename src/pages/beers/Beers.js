@@ -11,8 +11,6 @@ const Beers = () => {
   const [beersData, setBeersData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   
-  console.log(beersData);
-
   useEffect(() => {
     let ignore = false;
 
@@ -35,6 +33,7 @@ const Beers = () => {
   const handleSearchInput = (event) => {
     setInputValue(event.target.value);
   }
+  console.log(beersData);
 
   return (
     <div className="beers-div section">
