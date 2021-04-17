@@ -10,7 +10,7 @@ const BeersItem = ({id, name, isOrganic, icon, style}) => {
       <div className='img-name-div'>
         <div className="beers-img">{icon && <img src={icon} alt="No pic" />}</div>
         <div className="beer-name">
-          <h5>{name}</h5>
+          <h6>{name}</h6>
           <p>{style}</p>
         </div>
       </div>

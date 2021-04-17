@@ -50,7 +50,7 @@ const Signup = (props) => {
       <span className="signup-overlay"></span>
       <span className="signup-box">
           <h1>Beerio</h1>
-          <h5>Become a part of this world of beers and sign up today!</h5>
+          <h6>Become a part of this world of beers and sign up today!</h6>
         <form onSubmit={handleFormSubmit} className="signup-form">
             <input type="text" name="username" placeholder="Username" value={username} onChange={handleChange} />
             <input type="password" name="password" placeholder="Password" value={password} onChange={handleChange} />

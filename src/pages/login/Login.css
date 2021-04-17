@@ -1,54 +1,53 @@
-.alert h5 {
+.alert p {
   color: red;
   font-weight: bold;
-  padding-top: 15px;
+  padding-top: var(--xs);
 }
 
 .hiddenAlert {
-  height: 40px;
+  height: var(--m);
 }
 
 .login-div {
-  min-height: 100%;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
-}
-
-.login-background {
-  position: absolute;
-  top: var(--nav-size);
-  left: 0;
-  background-image: url('./beer-199650_1920.jpg');
-  width: 100%;
-  height: calc(100% - var(--nav-size));
+  background-image: url('./beer-1697302_1920.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -3;
 }
 
 .light-overlay {
   position: absolute;
   left: 0;
-  top: var(--nav-size);
+  top: 0;
   background-color: rgba(255, 255, 255, 0.2);
-  min-height: calc(100% - var(--nav-size));
+  height: 100%;
   width: 100%;
-  z-index: -2;
+  z-index: 1;
 }
 
 .login-box {
   position: absolute;
-  top: calc(50% + var(--nav-size)/2);
+  top: 50%;
   right: 50%;
   transform: translate(0, -50%);
   background-color: var(--text-color);
   padding: 60px;
-  z-index: -1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   width: 35%;
   box-shadow: 2px 3px 10px var(--bg);
 }
+
+/* .login-box h1 {
+  line-height: 80%;
+  padding-top: var(--m);
+  padding-bottom: var(--s);
+} */
 
 .login-form {
   display: flex;
@@ -58,8 +57,9 @@
 }
 
 .login-button {
-  box-shadow: 2px 2px 10px #99804e;
-  margin: 15px;
+  /* box-shadow: 2px 2px 10px #99804e;
+  margin: 15px; */
+  padding: var(--s) 0;
 }
 
 /* --- Typhography ---- */

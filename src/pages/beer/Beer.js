@@ -3,13 +3,17 @@ import { withAuth } from '../../lib/authContext';
 import { useRouteMatch } from 'react-router-dom';
 import './Beer.css';
 import BeerItem from '../../components/beer-item/BeerItem';
+import Navbar from '../../components/navbar/Navbar';
 
 const Beer = () => {
   let match = useRouteMatch();
   const {id} = match.params;
 
   return (
-    <BeerItem id={id} />
+    <>
+      <Navbar/>
+      <BeerItem id={id} />
+    </>
   )
 }
 

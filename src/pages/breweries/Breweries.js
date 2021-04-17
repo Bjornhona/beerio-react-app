@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { beerService } from '../../lib/beer-service';
+import Navbar from '../../components/navbar/Navbar';
 
 const Breweries = () => {
   const [breweriesData, setBreweriesData] = useState([]);
@@ -38,38 +39,41 @@ const Breweries = () => {
   const handleInputChange = (event) => setZipCode(event.target.value);
 
   return (
-    isLoading ? <p>Loading...</p> :
-    <div>
-      <h2>Breweries</h2>
-      {breweriesData.map(brewery => {
+    <>
+      <Navbar/>
+      {isLoading ? <p>Loading...</p> :
+      <div>
+        <h2>Breweries</h2>
+        {breweriesData.map(brewery => {
+          return (
+            <p key={brewery.id} onClick={() => fetchBreweryAddress(brewery.id)}>{brewery.name}</p>
+          )
+        })}
+      {breweryData !== [] && breweryData.map(location => {
         return (
-          <p key={brewery.id} onClick={() => fetchBreweryAddress(brewery.id)}>{brewery.name}</p>
+          <div key={location.id}>
+            <h4>{location.name}</h4>
+            <p>{location.latitude}</p>
+            <p>{location.longitude}</p>
+          </div>
         )
       })}
-     {breweryData !== [] && breweryData.map(location => {
-       return (
-        <div key={location.id}>
-          <h4>{location.name}</h4>
-          <p>{location.latitude}</p>
-          <p>{location.longitude}</p>
-        </div>
-       )
-     })}
-     <div>
-       <h2>Get nearest Breweries based on your zip-code</h2>
-       <input type="text" placeholder="Enter your zip-code" value={zipCode} onChange={handleInputChange}/>
-       <button onClick={() => getLocations()}>Get Location</button>
-       {locationsData.map(nearbyBrewery => {
-         return (
-           <div key={nearbyBrewery.id}>
-           <h4>{nearbyBrewery.name}, {nearbyBrewery.locality}</h4>
-            <p>{nearbyBrewery.latitude}</p>
-            <p>{nearbyBrewery.longitude}</p>
-           </div>
-         )
-       })}
-     </div>
-    </div>
+      <div>
+        <h2>Get nearest Breweries based on your zip-code</h2>
+        <input type="text" placeholder="Enter your zip-code" value={zipCode} onChange={handleInputChange}/>
+        <button onClick={() => getLocations()}>Get Location</button>
+        {locationsData.map(nearbyBrewery => {
+          return (
+            <div key={nearbyBrewery.id}>
+            <h4>{nearbyBrewery.name}, {nearbyBrewery.locality}</h4>
+              <p>{nearbyBrewery.latitude}</p>
+              <p>{nearbyBrewery.longitude}</p>
+            </div>
+          )
+        })}
+      </div>
+      </div>}
+    </>
   )
 }
 

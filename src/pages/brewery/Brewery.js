@@ -1,10 +1,14 @@
 import React from 'react';
+import NavItem from '../../components/navbar/Navbar';
 
 const Brewery = () => {
   return (
-    <div>
-      <p>Brewery</p>
-    </div>
+    <>
+      <Navbar/>
+      <div>
+        <p>Brewery</p>
+      </div>
+    </>
   )
 }
 

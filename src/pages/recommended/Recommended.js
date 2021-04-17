@@ -6,6 +6,7 @@ import { beerService } from '../../lib/beer-service';
 import BeerItem from '../../components/beer-item/BeerItem';
 import './Recommended.css';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
+import Navbar from '../../components/navbar/Navbar';
 
 const Recommended = () => {
   const [randomId, setRandomId] = useState('');
@@ -36,8 +37,11 @@ const Recommended = () => {
   }, []);
 
   return (
-    isLoading ? <LoadingScreen /> :
-    <BeerItem id={randomId} />
+    <>
+      <Navbar/>
+      {isLoading ? <LoadingScreen /> :
+      <BeerItem id={randomId} />}
+    </>
   );
 }
 

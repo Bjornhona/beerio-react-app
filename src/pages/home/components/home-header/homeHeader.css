@@ -1,0 +1,42 @@
+header {
+  min-height: 570px;
+  background-image: radial-gradient(circle at 35%, rgba(0, 0, 0, 0.7) 20%, transparent, transparent), url('./beer-1513436_1920.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 90px 20vw 120px;
+  height: 100%;
+}
+
+.header-content h2 {
+  padding: 0 15px;
+  /* width: 480px; */
+}
+
+@media (min-width: 770px) {
+  /* h2 {
+    padding: 60px 90px 45px 90px;
+  }
+
+  .about-us-content {
+    margin: 0 80px;
+    grid-template-columns: auto auto;
+  } */
+}
+
+@media (min-width: 1080px) {
+  /* h2 {
+    padding: 90px 120px 60px 120px;
+  }
+
+  .about-us-content {
+    margin: 0 110px;
+    grid-template-columns: auto auto auto auto;
+  } */
+}

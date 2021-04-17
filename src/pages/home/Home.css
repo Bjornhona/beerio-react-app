@@ -1,46 +1,39 @@
-.home-div {
-  min-height: 100%;
-}
-
-.home-menu {
-  position: absolute;
-  top: calc(50% + var(--nav-size)/2);
-  right: 50%;
-  transform: translate(0, -50%);
-  z-index: -1;
-  width: 35%;
-  box-shadow: 2px 3px 10px var(--bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-  color: var(--bg-accent);
-}
-
-.home-background {
-  position: absolute;
-  top: var(--nav-size);
-  left: 0;
-  background-image: url('./beer-1513436_1920.jpg');
+/* .home-div {
+  height: 100%;
   width: 100%;
-  height: calc(100% - var(--nav-size));
+} */
+
+/* header {
+  position: relative;
+  min-height: 570px;
+  background-image: radial-gradient(circle at 35%, rgba(0, 0, 0, 0.7) 20%, transparent, transparent), url('./beer-1513436_1920.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -3;
 }
 
-.home-overlay {
+.header-content {
   position: absolute;
+  top: 0;
   left: 0;
-  top: var(--nav-size);
-  background-color: rgba(255, 255, 255, 0.2);
-  min-height: calc(100% - var(--nav-size));
-  width: 100%;
-  z-index: -2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 90px 20vw 120px;
+  height: 100%;
 }
 
-.home-box {
+.header-content h2 {
+  padding: 0 15px;
+  width: 480px;
+} */
+
+/* .about {
+  height: 630px;
+  background-color: #EEE6DA;
+} */
+
+/* .home-box {
   background-color: var(--text-color);
   border-bottom: 1px solid var(--lighter-brown);
   padding: 60px 60px 30px 60px;
@@ -53,4 +46,4 @@
 .fontawesome {
   color: var(--bg-accent);
   font-size: 24px;
-}
+} */

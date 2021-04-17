@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom';
 import './Button.css';
 
 const Button = (props) => {
-  const { link, text } = props;
+  const { link, text, shadow, action } = props;
+  const className = shadow ? "common-button shadow" : "common-button"
+  const content = <p>{text}</p>
 
   return (
-      <Link to={link} className="common-button">
-        <p>{text}</p>
+    action ?
+      <div onClick={action} className={className}>
+        {content}
+      </div>
+      :
+      <Link to={link} className={className}>
+        {content}
       </Link>
   );
 }
