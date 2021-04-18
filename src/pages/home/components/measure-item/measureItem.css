@@ -1,6 +1,10 @@
 .measure-item {
   position: relative;
   z-index: 20;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .measure-item h2 {
@@ -12,6 +16,14 @@
   letter-spacing: 2px;
 }
 
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
 /* icon */
 .measure-icon {
   margin-top: calc(var(--s) + var(--xs));
@@ -20,24 +32,82 @@
 }
 
 .right .measure-icon {
-  margin-right: calc(var(--m) + var(--xs));
+  margin-right: var(--s);
 }
 
 .left .measure-icon {
-  margin-left: var(--m);
+  margin-left: var(--s);
 }
 
 /* text-container */
 .measure-item div {
   position: absolute;
   top: 0;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .right div {
-  text-align: right;
+  align-items: flex-end;
 }
 
 .left div {
-  text-align: left;
+  align-items: flex-start;
+}
+
+@media (max-width: 320px) {
+  .right-beers-content .measure-icon {
+    font-size: 2em;
+  }
+
+  .measure-item h2 {
+    margin-top: calc(var(--xs));
+    font-size: 1.5em;
+  }
+
+  .measure-item p {
+    letter-spacing: 1px;
+    font-size: 0.5em;
+  }
+
+  .right .measure-icon {
+    margin-right: 0;
+  }
+
+  .left .measure-icon {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .measure-item p {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .measure-item {
+    height: auto;
+  }
+
+  .measure-item h2 {
+    font-size: 3em;
+  }
+
+  .measure-item div {
+    width: 100%;
+  }
+
+  .measure-item .measure-icon {
+    font-size: 3.5em;
+  }
+
+  .right .measure-icon {
+    margin-right: calc(var(--m) + var(--xs));
+  }
+  
+  .left .measure-icon {
+    margin-left: calc(var(--m) + var(--xs));
+  }
 }

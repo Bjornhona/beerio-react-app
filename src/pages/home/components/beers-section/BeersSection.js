@@ -28,7 +28,7 @@ const BeersSection = () => {
           />
           <MeasureItem 
             measureIcon={faBeer} 
-            measureDescription="Want to try" 
+            measureDescription="Wanna try" 
             measureIconColor={rootStyles.getPropertyValue('--yellow')}
             measureValue="64"
           />
