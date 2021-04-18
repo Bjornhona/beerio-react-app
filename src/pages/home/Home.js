@@ -12,25 +12,19 @@ const Home = () => {
   return (
     <>
       <Navbar/>
-      {/* <div className="home-div"> */}
       <HeaderSection/>
       <AboutUsSection/>
       <BeersSection/>
         {/* <BreweriesSection/> */}
         {/* <FoodPairingSection/> */}
       <Sponsors/>
-
-        {/* <section className="beers">
-          <h2>Find the best beers in the world</h2>
-        </section>
-        <section className="breweries">
+        {/* <section className="breweries">
           <h2>Visit breweries in your area</h2>
         </section>
         <section className="food-pairing">
           <h2>Excellent beer and food pairing</h2>
         </section>
         <footer></footer> */}
-      {/* </div> */}
     </>
   )
 }

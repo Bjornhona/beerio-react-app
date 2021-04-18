@@ -7,9 +7,11 @@ const MeasureItem = (props) => {
 
   return (
     <div className={left ? "measure-item left" : "measure-item right"}>
-      <h2>{measureValue}</h2>
       <FontAwesomeIcon className="measure-icon" icon={measureIcon} color={measureIconColor}/>
-      <p>{measureDescription}</p>
+      <div>
+        <h2>{measureValue}</h2>
+        <p>{measureDescription}</p>
+      </div>
     </div>
   )
 }

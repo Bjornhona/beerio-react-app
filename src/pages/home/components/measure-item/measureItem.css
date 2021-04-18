@@ -1,5 +1,5 @@
 .measure-item {
-  position: absolute;
+  position: relative;
   z-index: 20;
 }
 
@@ -9,9 +9,35 @@
 
 .measure-item p {
   color: var(--white);
+  letter-spacing: 2px;
 }
 
+/* icon */
 .measure-icon {
-  font-size: 50px;
+  margin-top: calc(var(--s) + var(--xs));
+  font-size: 3.5em;
   opacity: 0.2;
+}
+
+.right .measure-icon {
+  margin-right: calc(var(--m) + var(--xs));
+}
+
+.left .measure-icon {
+  margin-left: var(--m);
+}
+
+/* text-container */
+.measure-item div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.right div {
+  text-align: right;
+}
+
+.left div {
+  text-align: left;
 }
