@@ -1,0 +1,17 @@
+.measure-item {
+  position: absolute;
+  z-index: 20;
+}
+
+.measure-item h2 {
+  color: var(--lighter-brown);
+}
+
+.measure-item p {
+  color: var(--white);
+}
+
+.measure-icon {
+  font-size: 50px;
+  opacity: 0.2;
+}

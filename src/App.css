@@ -6,9 +6,21 @@ html {
   font-size: calc(1em + 1vw);
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 768px) {
   html {
     font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 1.75vw;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  html {
+    font-size: 1.5vw;
   }
 }
 
@@ -31,6 +43,7 @@ body {
 
 :root {
   /* colors */
+  --white: #FFFFFF;
   --light-brown: #EEE6DA;
   --lighter-brown: #D2BB93;
   --medium-brown: #99804E;
@@ -39,6 +52,10 @@ body {
   --bg-accent: #484a4d;
   --lighter-grey: #ABACB1;
   --text-color: #dadce1;
+  --yellow: #F8DE6E;
+  --orange: #FF9D00;
+  --red: #FC1844;
+  --green: #01E863;
 
   /* distances */
   --xxs: 5px;
@@ -51,7 +68,7 @@ body {
   --xxxl: 120px;
 
   /* responsive breakpoints */
-  /* --width-mobile: 320px; */
+  --width-mobile: 320px;
   --width-ipad: 576px;
   --width-tablet: 768px;
   --width-laptop: 1366px;
@@ -76,7 +93,7 @@ a {
 
 input[type=text], input[type=password] {
   border: none;
-  background-color: white;
+  background-color: var(--white);
   font-size: 0.5em;
   font-family: Montserrat-Regular;
   padding: 0 30px;
@@ -86,7 +103,7 @@ input[type=text], input[type=password] {
 }
 
 input[type=submit]:hover {
-  color: white;
+  color: var(--white);
 }
 
 
@@ -112,7 +129,8 @@ h1 {
 h2 {
   font-family: Montserrat-Bold, 'Times Sans Serif', sans-serif;
   font-size: 3em;
-  color: #F8DE6E;
+  line-height: 120%;
+  color: var(--yellow);
 }
 
 h3 {
@@ -137,10 +155,48 @@ h6 {
 }
 
 p {
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 
 /* ---- App ---- */
+
+.inner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width:  var(--xs) * 90;
+}
+
+@media (max-width: 575px) {
+  .inner-content {
+    width: 100%;
+    padding: var(--m);
+  }
+}
+
+@media (min-width: 576px) {
+  .inner-content {
+    left: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .inner-content {
+    left: 45%;
+  }
+}
+
+@media (min-width: 900px) {
+  .inner-content {
+    max-width: 45vw;
+    left: 40%;
+  }
+}
+
+.outer-content {
+  padding: var(--m);
+}
 
 .nav-headline {
   color: white;

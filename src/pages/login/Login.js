@@ -45,7 +45,6 @@ const Login = (props) => {
 
   return (
     <div className="login-div">
-      {/* <span className="login-background"></span> */}
       <span className="light-overlay"></span>
       <span className="login-box">
         <h1>Beerio</h1>

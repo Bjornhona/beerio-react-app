@@ -1,6 +1,5 @@
 .about {
   background-color: #EEE6DA;
-  padding: 30px;
 }
 
 .about-us-content {
@@ -8,6 +7,10 @@
   grid-template-columns: auto;
   grid-column-gap: 30px;
   width: auto;
+}
+
+.outer-content h2 {
+  color: var(--orange);
 }
 
 @media (min-width: 768px) {

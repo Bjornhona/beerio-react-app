@@ -1,0 +1,13 @@
+header {
+  position: relative;
+  min-height: 570px;
+  background-image: radial-gradient(circle at 35%, rgba(0, 0, 0, 0.7) 20%, transparent, transparent), url('./beer-1513436_1920.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inner-content h2 {
+  padding-bottom: var(--l);
+  /* max-width: 35 * var(--xs); */
+}

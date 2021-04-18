@@ -17,16 +17,10 @@ import Play from './pages/play/Play';
 import Breweries from './pages/breweries/Breweries';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faBeer } from '@fortawesome/free-solid-svg-icons';
+import { faPlayCircle, faSearch, faHeart, faStar, faThumbsUp, faUser, faBars, 
+  faBeer, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faPlayCircle, faSearch, faHeart, faStar, faThumbsUp, faUser, faBars, faBeer);
+library.add(faPlayCircle, faSearch, faHeart, faStar, faThumbsUp, faUser, faBars, faBeer, faDatabase);
 
 const App = () => {
 

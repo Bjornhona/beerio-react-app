@@ -1,7 +1,8 @@
 import React from 'react';
 import './Dropdown.css';
 import DropdownItem from '../dropdownItem/DropdownItem';
-import { faSignInAlt, faUserPlus, faHome, faBeer, faHeart, faThumbsUp, faGamepad, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt, faUserPlus, faHome, faBeer, faHeart, faThumbsUp, faGamepad, 
+  faSignOutAlt, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { withAuth } from '../../../lib/authContext';
 
 const Dropdown = (props) => {
@@ -11,7 +12,7 @@ const Dropdown = (props) => {
     menuRight ?
       isLogged ?
         <ul className="dropdown dropdownRight">
-          <li className="hi-user">Hi {user.username}</li>
+          <li className="hi-user"><h6>Hi, {user.username}</h6></li>
           <DropdownItem leftIcon={faSignOutAlt} link={"/login"} logout={logout} handleClickItem={handleClickItem}>Logout</DropdownItem>
         </ul>
       :
@@ -23,6 +24,7 @@ const Dropdown = (props) => {
       <DropdownItem leftIcon={faHome} link={"/home"} handleClickItem={handleClickItem}>Home</DropdownItem>
       <DropdownItem leftIcon={faBeer} link={"/beers"} handleClickItem={handleClickItem}>Beers</DropdownItem>
       <DropdownItem leftIcon={faHeart} link={"/favorites"} handleClickItem={handleClickItem}>Favorites</DropdownItem>
+      <DropdownItem leftIcon={faDatabase} link={"/breweries"} handleClickItem={handleClickItem}>Breweries</DropdownItem>
       <DropdownItem leftIcon={faThumbsUp} link={"/recommended"} handleClickItem={handleClickItem}>Recommended</DropdownItem>
       <DropdownItem leftIcon={faGamepad} link={"/play"} handleClickItem={handleClickItem}>Play</DropdownItem>
     </ul>

@@ -17,7 +17,7 @@ const DropdownItem = (props) => {
         className='icon-left' 
         icon={leftIcon} 
       />
-      {props.children}
+      <p>{props.children}</p>
     </Link>
   )
 }

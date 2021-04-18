@@ -1,21 +1,24 @@
 import React from 'react';
 import { withAuth } from '../../lib/authContext';
 import './Home.css';
-import HomeHeader from './components/home-header/HomeHeader';
-import AboutUs from './components/about-us/AboutUs';
+import HeaderSection from './components/header-section/HeaderSection';
+import AboutUsSection from './components/about-us-section/AboutUsSection';
 import Sponsors from './components/sponsors/Sponsors';
 import Navbar from './../../components/navbar/Navbar';
+import BeersSection from './components/beers-section/BeersSection';
 
 const Home = () => {
 
   return (
     <>
       <Navbar/>
-      <div className="home-div">
-        <HomeHeader/>
-        <AboutUs/>
-
-        <Sponsors/>
+      {/* <div className="home-div"> */}
+      <HeaderSection/>
+      <AboutUsSection/>
+      <BeersSection/>
+        {/* <BreweriesSection/> */}
+        {/* <FoodPairingSection/> */}
+      <Sponsors/>
 
         {/* <section className="beers">
           <h2>Find the best beers in the world</h2>
@@ -27,19 +30,13 @@ const Home = () => {
           <h2>Excellent beer and food pairing</h2>
         </section>
         <footer></footer> */}
-      </div>
+      {/* </div> */}
     </>
   )
 }
 
 export default withAuth(Home);
 
-{/* <div className="home-menu">
-  <span className="home-box">
-    <h1>Beerio</h1>
-    <h5>Welcome to the world of beers!</h5>
-  </span>
-</div> */}
 
 {/* <HomeItem 
 link='/beers' 

@@ -1,0 +1,18 @@
+.beers-section {
+  position: relative;
+  min-height: 620px;
+  background-image: radial-gradient(circle at 35%, rgba(255, 255, 255, 0.2) 20%, transparent, transparent);
+  background-color: var(--bg-accent);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.inner-content h2 {
+  padding-bottom: var(--m);
+}
+
+.inner-content h6 {
+  padding-bottom: var(--l);
+  color: var(--white);
+}
