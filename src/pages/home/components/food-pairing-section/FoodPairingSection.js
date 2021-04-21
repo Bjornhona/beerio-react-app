@@ -1,13 +1,13 @@
 import React from 'react';
-import './beersSection.css';
+import './foodPairingSection.css';
 import Button from '../../../../components/button/Button';
 import MeasureItem from '../measure-item/MeasureItem';
 import {faHeart, faBeer, faSkull} from '@fortawesome/free-solid-svg-icons';
-import waterColorImage from "./watercolor-4629342_1920.png";
-import beerSplashImage from "./water-2748670_1920.png";
-import beerGlassImage from "./beer-3622242_1920.png";
+import waterColorImage from "../beers-section/watercolor-4629342_1920.png";
+import beerSplashImage from "../beers-section/water-2748670_1920.png";
+import beerGlassImage from "../beers-section/beer-3622242_1920.png";
 
-const BeersSection = () => {
+const FoodPairingSection = () => {
   const root = document.querySelector(':root');
   const rootStyles = getComputedStyle(root);
 
@@ -52,7 +52,7 @@ const BeersSection = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BeersSection;
+export default FoodPairingSection;

@@ -6,6 +6,8 @@ import AboutUsSection from './components/about-us-section/AboutUsSection';
 import Sponsors from './components/sponsors/Sponsors';
 import Navbar from './../../components/navbar/Navbar';
 import BeersSection from './components/beers-section/BeersSection';
+import BreweriesSection from './components/breweries-section/BreweriesSection';
+import FoodPairingSection from './components/food-pairing-section/FoodPairingSection';
 
 const Home = () => {
 
@@ -15,8 +17,8 @@ const Home = () => {
       <HeaderSection/>
       <AboutUsSection/>
       <BeersSection/>
-        {/* <BreweriesSection/> */}
-        {/* <FoodPairingSection/> */}
+      <BreweriesSection/>
+      <FoodPairingSection/>
       <Sponsors/>
         {/* <section className="breweries">
           <h2>Visit breweries in your area</h2>

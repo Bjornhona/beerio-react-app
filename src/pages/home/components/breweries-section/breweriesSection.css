@@ -1,0 +1,205 @@
+/* --- left content --- */
+
+.breweries-section {
+  background-image: radial-gradient(circle at 35%, rgba(255, 255, 255, 0.2) 20%, transparent, transparent);
+  background-color: var(--light-brown);
+  padding: var(--m);
+}
+
+.breweries-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: var(--s);
+  width: 100%;
+  grid-template-areas:
+    "a"
+    "d"
+    "e"
+    "c";
+}
+
+.right-breweries-content {
+  grid-area: a;
+}
+
+.right-breweries-content h2 {
+  grid-area: a;
+  font-size: 2em;
+  color: var(--orange);
+  padding-bottom: var(--m);
+}
+
+.right-breweries-content h6 {
+  /* grid-area: b; */
+}
+
+.breweries-button {
+  grid-area: c;
+}
+
+/* --- middle content --- */
+
+.middle-breweries-content {
+  position: relative;
+  grid-area: d;
+  height: 200px;
+  margin-bottom: var(--l);
+}
+
+.middle-breweries-content h1 {
+  position: absolute;
+  bottom: -3vw;
+  right: 15vw;
+  color: var(--medium-brown);
+  opacity: 0.3;
+  font-size: 2em;
+}
+
+.background-color-image {
+  position: absolute;
+  top: 0;
+  left: -5vw;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  opacity: 50%;
+  width: 55%;
+}
+
+.brewery-splash-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 15vw;
+  right: 0;
+  margin: auto;
+  width: 45%;
+  opacity: 0.4;
+}
+
+.barrel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 60%;
+}
+
+/* --- right content --- */
+
+.right-beers-content {
+  grid-area: e;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--m);
+}
+
+.right-beers-content h2 {
+  font-size: 2em;
+}
+
+.right-beers-content .measure-icon {
+  font-size: 2.5em;
+}
+
+/* --- responsive --- */
+
+@media (max-width: 320px) {
+  .middle-breweries-content {
+    height: 100px;
+    margin-bottom: var(--s);
+  }
+
+  .middle-breweries-content h1 {
+    bottom: -8vw;
+    right: 8vw;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 576px) {
+  .middle-breweries-content {
+    height: 250px;
+    margin-bottom: var(--xl);
+  }
+
+  .middle-breweries-content h1 {
+    right: 17vw;
+    bottom: -6vw;
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .breweries-section {
+    padding: var(--l);
+  }
+
+  .breweries-content {
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: var(--m);
+    grid-row-gap: 0;
+    grid-template-areas:
+    "e d a"
+    "e d a"
+    "e d c";
+  }
+
+  .right-breweries-content h6 {
+    padding-bottom: var(--xl);
+  }
+
+  .background-color-image {
+    width: 160%;
+  }
+
+  .brewery-splash-image {
+    bottom: 10vw;
+    width: 140%;
+  }
+
+  .barrel-image {
+    left: -5vw;
+    width: 180%;
+  }
+
+  .middle-breweries-content {
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .middle-breweries-content h1 {
+    bottom: 0;
+    right: -10vw;
+  }
+
+  .right-beers-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    height: 100%;
+    align-items: stretch;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1080px) {
+  .breweries-section {
+    padding: var(--xl);
+  }
+
+  .middle-breweries-content h1 {
+    bottom: -3vw;
+    right: -8vw;
+  }
+
+  .barrel-image {
+    left: -8vw;
+    width: 200%;
+  }
+}

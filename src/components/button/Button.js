@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './Button.css';
 
 const Button = (props) => {
-  const { link, text, shadow, action } = props;
-  const className = shadow ? "common-button shadow" : "common-button"
+  const { link, text, shadow, darkShadow, action } = props;
+  const className = shadow ? "common-button shadow" : (darkShadow ? "common-button dark-shadow" : "common-button");
   const content = <p>{text}</p>
 
   return (

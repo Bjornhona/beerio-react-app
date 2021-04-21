@@ -14,6 +14,7 @@
 .measure-item p {
   color: var(--white);
   letter-spacing: 2px;
+  white-space: nowrap;
 }
 
 .right {
@@ -76,13 +77,6 @@
 
   .left .measure-icon {
     margin-left: 0;
-  }
-}
-
-@media (max-width: 576px) {
-
-  .measure-item p {
-    white-space: nowrap;
   }
 }
 
