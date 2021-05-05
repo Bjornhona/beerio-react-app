@@ -1,41 +1,18 @@
 import React from 'react';
 import './sponsors.css';
+import logos from './images/imageExporter';
 
 const Sponsors = () => {
-
-  const sponsorsData = {
-    images: [
-      {
-        link: "/home",
-        logo: ""
-      },
-      {
-        link: "/beers",
-        logo: ""
-      },
-      {
-        link: "/breweries",
-        logo: ""
-      },
-    ]
-  }
   
   const renderLogos = () => {
     return (
-        sponsorsData.images.map((slide, index) => {
-            return (
-                slide.link !== "" ?
-                <a key={index} href={`${slide.link}`}><img src={`${slide.logo}`} alt="sponsor"/></a>
-                :
-                <img key={index} src={`${slide.logo}`} alt="sponsor"/>
-            )
-        })
+        logos.map((image, index) => <img key={index} src={`${image}`} alt="sponsor"/>)
     );
   }
 
   return (
       <div className="sponsors-container">
-          <span data-testid="title" className='title'>{sponsorsData.title}</span>
+          <span data-testid="title" className='title'><h2>Sponsors.</h2></span>
           <div className="sliding-logos">
               <div className="logos-container">
                   {renderLogos()}

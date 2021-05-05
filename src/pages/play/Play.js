@@ -15,7 +15,7 @@ const Play = (props) => {
   return (
     <>
       <Navbar/>
-      <div className="index-div section">
+      <div className="section">
         <div className="beers-title">
           <Link to='/home' className="menu-button back"><span role="img" aria-label="left-angle-bracket">〈</span></Link>
           <h4>What beer mood are you in, {props.user.username}?</h4>

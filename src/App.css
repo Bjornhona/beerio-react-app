@@ -74,7 +74,6 @@ body {
   --width-laptop: 1366px;
   --width-desktop: 1920px;
 
-  --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
   --speed: 500ms;
@@ -196,17 +195,6 @@ p {
 
 .outer-content {
   padding: var(--m);
-}
-
-.nav-headline {
-  color: white;
-  text-transform: uppercase;
-}
-
-.header-logo-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
 

@@ -1,11 +1,20 @@
 .menu-item {
-  height: 50px;
   display: flex;
   align-items: center;
   border-radius: var(--border-radius);
   transition: backgroud var(--speed);
-  padding: 0.5rem;
   color: var(--text-color);
+  width: calc(var(--nav-size) * 0.9);
+  margin: 10px 0;
+}
+
+.menu-item p{
+  padding-left: var(--s);
+}
+
+.menu-item .icon-left {
+  padding: 5px;
+  margin: 2px;
 }
 
 .menu-item:hover {

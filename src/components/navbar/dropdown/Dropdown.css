@@ -1,19 +1,19 @@
 .dropdown {
   position: absolute;
-  top: 58px;
+  top: var(--nav-size);
   width: 300px;
   background-color: var(--bg);
   border: var(--border);
   border-radius: var(--border-radius);
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   overflow: hidden;
   z-index: 10;
 }
 
 .hi-user {
   color: var(--text-color);
-  padding: 0.5rem;
-  margin: 7px 15px;
+  padding: 0.5rem 0;
+  margin: 7px 0;
 
 }
 

@@ -20,47 +20,9 @@ const Home = () => {
       <BreweriesSection/>
       <FoodPairingSection/>
       <Sponsors/>
-        {/* <section className="breweries">
-          <h2>Visit breweries in your area</h2>
-        </section>
-        <section className="food-pairing">
-          <h2>Excellent beer and food pairing</h2>
-        </section>
-        <footer></footer> */}
+      {/* <footer></footer> */}
     </>
   )
 }
 
 export default withAuth(Home);
-
-
-{/* <HomeItem 
-link='/beers' 
-headerText='Explore' 
-description='Read about the best beers' 
-iconName='search' 
-iconClass='fontawesome' />
-<HomeItem 
-link='/favorites' 
-headerText='Favourites' 
-description='Remember the beers you love' 
-iconName='heart' 
-iconClass='fontawesome' />
-<HomeItem 
-link='/recommended' 
-headerText='Recommended' 
-description='The most wanted beers' 
-iconName='thumbs-up' 
-iconClass='fontawesome' />
-<HomeItem 
-link='/breweries' 
-headerText='Breweries' 
-description='Learn from the best breweries' 
-iconName='beer' 
-iconClass='fontawesome' />
-<HomeItem 
-link='/play' 
-headerText='Play' 
-description='Your beer personality' 
-iconName='play-circle' 
-iconClass='fontawesome' /> */}

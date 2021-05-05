@@ -2,8 +2,7 @@ import React, {useRef, useEffect, useState} from 'react';
 import './Navbar.css';
 import NavItem from './nav-item/NavItem';
 import Dropdown from './dropdown/Dropdown';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   const node = useRef();
@@ -34,13 +33,24 @@ const Navbar = () => {
   return (
     <nav className='navbar' ref={node}>
       <ul className='navbar-nav'>
-        <NavItem icon={faBars} isOpen={openLeft} handleOpen={() => setOpenLeft(!openLeft)}>
-          <Dropdown menuLeft handleClickItem={handleClickItem} />
-        </NavItem>
+        <span className="left-nav-item">
+          <NavItem className="left-navbar-item" icon={faBars} isOpen={openLeft} handleOpen={() => setOpenLeft(!openLeft)}>
+            <Dropdown menuLeft handleClickItem={handleClickItem} />
+          </NavItem>
+        </span>
+
         <div className="header-logo-container">
-          <img src={process.env.PUBLIC_URL + '/Beerio-192.png'} alt="beer logo" className="logo-image" />
-          <h3 className='nav-headline'>Beerio</h3>
+          <a href="/home"><h1 className='nav-headline'>Beerio</h1></a>
         </div>
+
+        <div className="navbar-menu">
+          <a href="/beers"><p>Explore</p></a>
+          <a href="/favorites"><p>Favorites</p></a>
+          <a href="/food-pairing"><p>Food pairing</p></a>
+          <a href="/breweries"><p>Breweries</p></a>
+          <a href="/play"><p>Play</p></a>
+        </div>
+
         <NavItem icon={faUser} isOpen={openRight} handleOpen={() => setOpenRight(!openRight)}>
           <Dropdown menuRight handleClickItem={handleClickItem} />
         </NavItem>

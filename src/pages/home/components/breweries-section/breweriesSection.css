@@ -1,4 +1,4 @@
-/* --- left content --- */
+/* --- right content --- */
 
 .breweries-section {
   background-image: radial-gradient(circle at 35%, rgba(255, 255, 255, 0.2) 20%, transparent, transparent);
@@ -24,6 +24,7 @@
 }
 
 .right-breweries-content h2 {
+  text-align: right;
   grid-area: a;
   font-size: 2em;
   color: var(--orange);
@@ -31,7 +32,7 @@
 }
 
 .right-breweries-content h6 {
-  /* grid-area: b; */
+  text-align: right;
 }
 
 .breweries-button {
@@ -59,23 +60,22 @@
 .background-color-image {
   position: absolute;
   top: 0;
-  left: -5vw;
+  left: -7vw;
   bottom: 0;
   right: 0;
   margin: auto;
-  opacity: 50%;
-  width: 55%;
+  opacity: 0.4;
+  width: 80%;
 }
 
 .brewery-splash-image {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 15vw;
+  bottom: 10vw;
   right: 0;
   margin: auto;
   width: 45%;
-  opacity: 0.4;
 }
 
 .barrel-image {
@@ -85,24 +85,16 @@
   bottom: 0;
   right: 0;
   margin: auto;
-  width: 60%;
+  width: 80%;
 }
 
-/* --- right content --- */
+/* --- left content --- */
 
-.right-beers-content {
+.left-breweries-content {
   grid-area: e;
   display: flex;
   justify-content: space-between;
   padding-bottom: var(--m);
-}
-
-.right-beers-content h2 {
-  font-size: 2em;
-}
-
-.right-beers-content .measure-icon {
-  font-size: 2.5em;
 }
 
 /* --- responsive --- */
@@ -131,6 +123,19 @@
     bottom: -6vw;
     font-size: 2.5em;
   }
+
+  .background-color-image {
+    width: 70%;
+  }
+
+  .brewery-splash-image {
+    bottom: 7vw;
+    width: 40%;
+  }
+
+  .barrel-image {
+    width: 70%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -149,12 +154,21 @@
     "e d c";
   }
 
+  .right-breweries-content {
+    padding-left: var(--m);
+  }
+
   .right-breweries-content h6 {
     padding-bottom: var(--xl);
   }
 
+  .breweries-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .background-color-image {
-    width: 160%;
+    width: 190%;
   }
 
   .brewery-splash-image {
@@ -177,10 +191,10 @@
     right: -10vw;
   }
 
-  .right-beers-content {
+  .left-breweries-content {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     flex-direction: column;
     height: 100%;
     align-items: stretch;
@@ -193,13 +207,28 @@
     padding: var(--xl);
   }
 
+  .right-breweries-content {
+    padding-left: var(--xxl);
+  }
+
   .middle-breweries-content h1 {
-    bottom: -3vw;
+    bottom: -1vw;
     right: -8vw;
   }
 
+  .background-color-image {
+    left: -10vw;
+    width: 190%;
+  }
+
+  .brewery-splash-image {
+    left: -4vw;
+    bottom: 5vw;
+    width: 120%;
+  }
+
   .barrel-image {
-    left: -8vw;
-    width: 200%;
+    left: -9vw;
+    width: 190%;
   }
 }

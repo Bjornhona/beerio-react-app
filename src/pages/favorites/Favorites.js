@@ -25,7 +25,7 @@ const Favorites = (props) => {
   }, []);
 
   return (
-    <div className="index-div section">
+    <div className="section">
       <Navbar/>
       <div className="beers-title">
         <Link to='/home' className="menu-button back"><span role="img" aria-label="left-angle-bracket">〈</span></Link>

@@ -2,9 +2,9 @@ import React from 'react';
 import './breweriesSection.css';
 import Button from '../../../../components/button/Button';
 import MeasureItem from '../measure-item/MeasureItem';
-import {faHeart, faBeer, faSkull} from '@fortawesome/free-solid-svg-icons';
-import backgroundColorImage from "./watercolor-4629348_1920.png";
-import brewerySplashImage from "./water-2748695_1920.png";
+import {faGlobeAmericas, faMapMarkedAlt, faSkull} from '@fortawesome/free-solid-svg-icons';
+import backgroundColorImage from "./watercolor-4629348_1920(1).png";
+import brewerySplashImage from "./water-2748695_1920(1).png";
 import barrelImage from "./barrel-1875819_1920.png";
 
 const BreweriesSection = () => {
@@ -20,34 +20,34 @@ const BreweriesSection = () => {
         </div>
         
         <div className="breweries-button">
-          <Button link="/play" text="Explore" shadow/>
+          <Button link="/breweries" text="Breweries" shadow/>
         </div>
 
         <div className="middle-breweries-content">
-          <h1>Breweries</h1>
           <div><img className="background-color-image" src={backgroundColorImage} alt="water color"/></div>
           <img className="brewery-splash-image" src={brewerySplashImage} alt="brewery splash"/>
+          <h1>Breweries</h1>
           <img className="barrel-image" src={barrelImage} alt="beer barrel"/>
         </div>
 
-        <div className="right-beers-content">
+        <div className="left-breweries-content">
           <MeasureItem 
-            measureIcon={faHeart} 
-            measureDescription="My Favorites" 
+            measureIcon={faGlobeAmericas} 
+            measureDescription="Great place" 
             measureIconColor={rootStyles.getPropertyValue('--green')}
             measureValue="15"
             left
           />
           <MeasureItem 
-            measureIcon={faBeer} 
-            measureDescription="Wanna try" 
+            measureIcon={faMapMarkedAlt} 
+            measureDescription="Wanna go" 
             measureIconColor={rootStyles.getPropertyValue('--orange')}
             measureValue="23"
             left
           />
           <MeasureItem 
             measureIcon={faSkull} 
-            measureDescription="Never again" 
+            measureDescription="No go" 
             measureIconColor={rootStyles.getPropertyValue('--dark-brown')}
             measureValue="9"
             left

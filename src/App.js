@@ -15,12 +15,14 @@ import NotFound from './pages/not-found/NotFound';
 import Beer from './pages/beer/Beer';
 import Play from './pages/play/Play';
 import Breweries from './pages/breweries/Breweries';
+import FoodPairing from './pages/food-pairing/FoodPairing';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlayCircle, faSearch, faHeart, faStar, faThumbsUp, faUser, faBars, 
-  faBeer, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, 
+  faBeer, faDatabase, faGlobeAmericas, faMapMarkedAlt, faUtensils } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faPlayCircle, faSearch, faHeart, faStar, faThumbsUp, faUser, faBars, faBeer, faDatabase);
+library.add(faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, faBeer, 
+  faDatabase, faGlobeAmericas, faMapMarkedAlt, faUtensils);
 
 const App = () => {
 
@@ -34,6 +36,7 @@ const App = () => {
            <PrivateRoute path="/home" component={Home} />
            <PrivateRoute exact path="/beers" component={Beers} />
            <PrivateRoute path="/favorites" component={Favorites} />
+           <PrivateRoute path="/food-pairing" component={FoodPairing} />
            <PrivateRoute path="/recommended" component={Recommended} />
            <PrivateRoute path="/beers/:id" component={Beer} />
            <PrivateRoute path="/breweries" component={Breweries} />
