@@ -8,13 +8,13 @@ html {
 
 @media screen and (min-width: 768px) {
   html {
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 }
 
 @media screen and (min-width: 900px) {
   html {
-    font-size: 1.75vw;
+    font-size: 2vw;
   }
 }
 
@@ -37,7 +37,6 @@ body {
   color: var(--bg);
   font-family: Montserrat-Regular, 'Times Sans Serif', sans-serif;
 }
-
 
 /* ---- generic for menus ---- */
 
@@ -74,9 +73,16 @@ body {
   --width-laptop: 1366px;
   --width-desktop: 1920px;
 
+  /* other */
+  --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
   --speed: 500ms;
+}
+@media (min-width: 768px) {
+  :root {
+    --nav-size: 90px;
+  }
 }
 
 ul {
@@ -158,6 +164,10 @@ p {
 }
 
 /* ---- App ---- */
+
+.body-content {
+  padding-top: var(--nav-size);
+}
 
 .inner-content {
   position: absolute;

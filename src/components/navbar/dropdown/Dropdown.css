@@ -1,7 +1,7 @@
 .dropdown {
   position: absolute;
   top: var(--nav-size);
-  width: 300px;
+  width: 220px;
   background-color: var(--bg);
   border: var(--border);
   border-radius: var(--border-radius);
@@ -18,9 +18,9 @@
 }
 
 .dropdownRight {
-  transform: translateX(-40%);
+  right: 0;
 }
 
 .dropdownLeft {
-  transform: translateX(40%);
+  left: 0;
 }

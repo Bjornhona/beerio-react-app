@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import { beerService } from '../../lib/beer-service';
-import Navbar from '../../components/navbar/Navbar';
 
 const Breweries = () => {
   const [breweriesData, setBreweriesData] = useState([]);
@@ -40,7 +39,6 @@ const Breweries = () => {
 
   return (
     <>
-      <Navbar/>
       {isLoading ? <p>Loading...</p> :
       <div>
         <h2>Breweries</h2>

@@ -16,6 +16,7 @@ import Beer from './pages/beer/Beer';
 import Play from './pages/play/Play';
 import Breweries from './pages/breweries/Breweries';
 import FoodPairing from './pages/food-pairing/FoodPairing';
+import Navbar from './components/navbar/Navbar';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, 
@@ -26,23 +27,37 @@ library.add(faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, faBeer,
 
 const App = () => {
 
+  const defaultRoutes = () => {
+    return (
+      <div>
+        <Navbar/>
+        <div className="body-content">
+          <Switch>
+            <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute exact path="/beers" component={Beers} />
+            <PrivateRoute path="/favorites" component={Favorites} />
+            <PrivateRoute path="/food-pairing" component={FoodPairing} />
+            <PrivateRoute path="/recommended" component={Recommended} />
+            <PrivateRoute path="/beers/:id" component={Beer} />
+            <PrivateRoute path="/breweries" component={Breweries} />
+            {/* <PrivateRoute path="/breweries/:id" component={Brewery} /> */}
+            <PrivateRoute path="/play" component={Play} />
+          </Switch>
+        {/* <Footer/> */}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <AuthContext>
       <div className="app" data-testid="app">
         <Switch>
           <Route exact path="/" component={Index} />
-           <PublicRoute path="/signup" component={Signup} />
-           <PublicRoute path="/login" component={Login} />
-           <PrivateRoute path="/home" component={Home} />
-           <PrivateRoute exact path="/beers" component={Beers} />
-           <PrivateRoute path="/favorites" component={Favorites} />
-           <PrivateRoute path="/food-pairing" component={FoodPairing} />
-           <PrivateRoute path="/recommended" component={Recommended} />
-           <PrivateRoute path="/beers/:id" component={Beer} />
-           <PrivateRoute path="/breweries" component={Breweries} />
-           {/* <PrivateRoute path="/breweries/:id" component={Brewery} /> */}
-           <PrivateRoute path="/play" component={Play} />
-           <Route component={NotFound} />
+          <PublicRoute path="/signup" component={Signup} />
+          <PublicRoute path="/login" component={Login} />
+          <Route component={defaultRoutes}/>
+          <Route component={NotFound} />
          </Switch>
       </div>
     </AuthContext>

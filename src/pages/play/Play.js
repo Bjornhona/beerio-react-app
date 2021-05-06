@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { withAuth } from '../../lib/authContext';
 import { Link } from 'react-router-dom';
 import MoodItem from './components/MoodItem';
-import Navbar from '../../components/navbar/Navbar';
 
 const Play = (props) => {
   const [mood] = useState('');
@@ -14,7 +13,6 @@ const Play = (props) => {
 
   return (
     <>
-      <Navbar/>
       <div className="section">
         <div className="beers-title">
           <Link to='/home' className="menu-button back"><span role="img" aria-label="left-angle-bracket">〈</span></Link>

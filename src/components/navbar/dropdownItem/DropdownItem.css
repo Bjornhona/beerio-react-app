@@ -10,6 +10,7 @@
 
 .menu-item p{
   padding-left: var(--s);
+  white-space: nowrap;
 }
 
 .menu-item .icon-left {

@@ -1,11 +1,8 @@
-.logo-image {
-  width: 40px;
-  height: 40px;
-  /* margin-right: var(--s); */
-}
-
 .navbar {
-  --nav-size: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 500;
   height: var(--nav-size);
   background-color: var(--bg);
   padding: 0 var(--m);
@@ -42,13 +39,8 @@
   }
 }
 
-/* @media (min-width: 576px) {
-
-} */
-
 @media (min-width: 768px) {
   .navbar {
-    --nav-size: 90px;
     padding: 0 var(--l);
   }
 

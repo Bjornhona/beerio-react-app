@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { beerService } from '../../lib/beer-service';
 import BeersItem from '../../components/beers-item/BeersItem';
 import './Favorites.css';
-import Navbar from './../../components/navbar/Navbar';
 
 const Favorites = (props) => {
   const [favorites, setFavorites] = useState([]);
@@ -26,7 +25,6 @@ const Favorites = (props) => {
 
   return (
     <div className="section">
-      <Navbar/>
       <div className="beers-title">
         <Link to='/home' className="menu-button back"><span role="img" aria-label="left-angle-bracket">〈</span></Link>
         <h4>My Favorite Beers</h4>
