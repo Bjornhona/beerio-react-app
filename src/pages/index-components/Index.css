@@ -2,32 +2,18 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('./beers-background.jpg');
+  background: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('./beers-background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.index-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.2);
-  height: 100%;
-  width: 100%;
-  z-index: 1;
+  display: flex;
 }
 
 .index-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
   width: 100%;
   color: white;
   background-color: rgba(36, 38, 38, 0.9);
   padding: var(--xl);
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +29,6 @@
   padding-top: var(--xl);
   text-shadow: 2px 3px 10px black;
   padding-bottom: var(--xxs);
-  /* padding-top: var(--xxxl); */
 }
 
 .index-box h6 {
@@ -66,11 +51,9 @@
 @media (min-width: 768px) {
   .index-box {
     padding: var(--xl);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 75%;
     height: 80%;
+    margin: auto;
   }
 
   .buttons-container {

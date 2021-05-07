@@ -47,26 +47,19 @@ const Signup = (props) => {
   const { username, password, alert } = state;
   return (
     <div className="signup-div">
-      {/* <span className="signup-background"></span>
-      <span className="signup-overlay"></span> */}
       <span className="signup-box">
           <h1>Beerio</h1>
           <h6>Become a part of this world of beers and sign up today!</h6>
-        {/* <form onSubmit={handleFormSubmit} className="signup-form"> */}
           <div className="signup-form">
             <div className="inputs">
               <input type="text" name="username" placeholder="Username" value={username} onChange={handleChange} />
               <input type="password" name="password" placeholder="Password" value={password} onChange={handleChange} />
             </div>
             <Button action={handleFormSubmit} text="Sign up" shadow/>
-
-            {/* <input type="submit" value="Sign up" className="common-button signup-button" /> */}
-            {/* { alert ? <div className="alert"><h5>{alert}</h5></div> : null} */}
             <div className={alert ? "alert" : "hiddenAlert"}><h5>{state.alert}</h5></div>
             <p className="signup-footer">Already have an account?  
               <Link to={"/login"} className="login-text"> Log in</Link>
             </p>
-        {/* </form> */}
         </div>
       </span>
     </div>

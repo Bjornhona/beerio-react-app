@@ -6,7 +6,7 @@ const Index = () => {
   
   return (
     <div className="index-div">
-      <span className="index-overlay"></span>
+      {/* <span className="index-overlay"></span> */}
       <span className="index-box">
         <h3>The happy Beer Gormand</h3>
         <h1>Beerio</h1>
