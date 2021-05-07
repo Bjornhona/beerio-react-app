@@ -70,6 +70,7 @@ body {
   --width-mobile: 320px;
   --width-ipad: 576px;
   --width-tablet: 768px;
+  --width-ipadpro: 1024px;
   --width-laptop: 1366px;
   --width-desktop: 1920px;
 
@@ -103,7 +104,6 @@ input[type=text], input[type=password] {
   font-family: Montserrat-Regular;
   padding: 0 30px;
   height: 45px;
-  margin: 0 0 15px 0;
   width: 100%;
 }
 

@@ -4,7 +4,6 @@
   border-radius: var(--border-radius);
   transition: backgroud var(--speed);
   color: var(--text-color);
-  width: calc(var(--nav-size) * 0.9);
   margin: 10px 0;
 }
 

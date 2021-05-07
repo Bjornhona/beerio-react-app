@@ -45,14 +45,15 @@ const Login = (props) => {
 
   return (
     <div className="login-div">
-      <span className="light-overlay"></span>
       <span className="login-box">
         <h1>Beerio</h1>
         <h6>Welcome back, log in to enter the world of beers!</h6>
         <div className="login-form">
-          <input type="text" name="username" placeholder="Username" value={state.username} onChange={handleChange} />
-          <input type="password" name="password" placeholder="Password" value={state.password} onChange={handleChange} />
-          <Button action={handleFormSubmit} text="Log in" shadow className="login-button"/>
+          <div className="inputs">
+            <input type="text" name="username" placeholder="Username" value={state.username} onChange={handleChange} />
+            <input type="password" name="password" placeholder="Password" value={state.password} onChange={handleChange} />
+          </div>
+          <Button action={handleFormSubmit} text="Log in" shadow/>
           <div className={state.alert ? "alert" : "hiddenAlert"}><p>{state.alert}</p></div>
           <p className="login-footer">Don´t have an account yet? 
             <Link to={"/signup"} className="signup-text"> Sign up</Link>
