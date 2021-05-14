@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
-  background: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('./bar-2209813_1920.jpg');
+  background: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('./beer-932994_1920.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,7 +11,7 @@
 
 .login-box {
   background-color: var(--text-color);
-  padding: var(--xl);
+  padding: var(--l);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +61,6 @@
 
 @media (min-width: 768px) {
   .login-box {
-    padding: var(--xl);
     width: 75%;
     height: auto;
     margin: auto;
@@ -76,6 +75,7 @@
 
 @media (min-width: 1920px) {
   .login-box {
+    padding: var(--xxl);
     width: 35%;
   }
 }

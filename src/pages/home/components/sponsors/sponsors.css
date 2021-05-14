@@ -68,10 +68,16 @@
 
 @media (min-width: 1080px) {
   .sponsors-container {
-    padding: var(--xl);
+    padding: var(--xxl);
   }
 
   .sponsors-container span {
     padding-right: var(--xl);
+  }
+}
+
+@media (min-width: 1920px) {
+  .sponsors-container {
+    padding: var(--xxxl);
   }
 }

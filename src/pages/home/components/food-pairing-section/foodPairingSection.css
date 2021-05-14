@@ -132,14 +132,24 @@
 
 @media (min-width: 1080px) {
   .food-section {
-    padding: var(--xl);
+    padding: var(--xxl);
   }
 
   .left-food-content {
-    padding-right: var(--xxl);
+    width: 90%;
   }
 
   .middle-food-content h1 {
     bottom: -1vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .food-section {
+    padding: var(--xxxl);
+  }
+
+  .left-food-content {
+    width: 75%;
   }
 }

@@ -11,7 +11,7 @@
 
 .signup-box {
   background-color: var(--text-color);
-  padding: 60px;
+  padding: var(--l);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +61,6 @@
 
 @media (min-width: 768px) {
   .signup-box {
-    padding: var(--xl);
     width: 75%;
     height: auto;
     margin: auto;
@@ -76,6 +75,7 @@
 
 @media (min-width: 1920px) {
   .signup-box {
+    padding: var(--xxl);
     width: 35%;
   }
 }

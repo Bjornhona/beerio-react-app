@@ -204,11 +204,12 @@
 
 @media (min-width: 1080px) {
   .breweries-section {
-    padding: var(--xl);
+    padding: var(--xxl);
   }
 
   .right-breweries-content {
-    padding-left: var(--xxl);
+    justify-self: end;
+    width: 90%;
   }
 
   .middle-breweries-content h1 {
@@ -230,5 +231,15 @@
   .barrel-image {
     left: -9vw;
     width: 190%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .breweries-section {
+    padding: var(--xxxl);
+  }
+  
+  .right-breweries-content {
+    width: 75%;
   }
 }

@@ -191,11 +191,11 @@
 
 @media (min-width: 1080px) {
   .beers-section {
-    padding: var(--xl);
+    padding: var(--xxl);
   }
 
   .left-beers-content {
-    padding-right: var(--xxl);
+    width: 90%;
   }
 
   .beer-glass-image {
@@ -205,5 +205,15 @@
   .wheat-image {
     top: 15vw;
     width: 50%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .beers-section {
+    padding: var(--xxxl);
+  }
+
+  .left-beers-content {
+    width: 75%;
   }
 }
