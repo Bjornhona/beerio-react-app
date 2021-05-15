@@ -30,11 +30,21 @@ const Navbar = () => {
     setOpenLeft(false);
   }
 
+  const handleOpen = (side) => {
+    if (side === "left") {
+      setOpenLeft(!openLeft);
+      setOpenRight(false);
+    } else {
+      setOpenRight(!openRight);
+      setOpenLeft(false);
+    }
+  }
+
   return (
     <nav className='navbar' ref={node}>
       <ul className='navbar-nav'>
         <span className="left-nav-item">
-          <NavItem className="left-navbar-item" icon={faBars} isOpen={openLeft} handleOpen={() => setOpenLeft(!openLeft)}>
+          <NavItem className="left-navbar-item" icon={faBars} isOpen={openLeft} handleOpen={() => handleOpen("left")}>
             <Dropdown menuLeft handleClickItem={handleClickItem} />
           </NavItem>
         </span>
@@ -51,7 +61,7 @@ const Navbar = () => {
           <a href="/play"><p>Play</p></a>
         </div>
 
-        <NavItem icon={faUser} isOpen={openRight} handleOpen={() => setOpenRight(!openRight)}>
+        <NavItem icon={faUser} isOpen={openRight} handleOpen={() => handleOpen("right")}>
           <Dropdown menuRight handleClickItem={handleClickItem} />
         </NavItem>
       </ul>
