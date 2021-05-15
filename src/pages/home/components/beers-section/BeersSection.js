@@ -21,7 +21,7 @@ const BeersSection = () => {
         </div>
         
         <div className="explore-button">
-          <Button link="/beers" text="Explore" darkShadow/>
+          <Button link="/beers" text="Beers" darkShadow/>
         </div>
 
         <div className="middle-beers-content">

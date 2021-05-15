@@ -48,6 +48,16 @@
   justify-items: center;
 }
 
+@media (max-width: 320px) {
+  .index-box {
+    padding: var(--s);
+  }
+
+  .index-box h1 {
+    font-size: 5.5em;
+  }
+}
+
 @media (min-width: 768px) {
   .index-box {
     padding: var(--xl);

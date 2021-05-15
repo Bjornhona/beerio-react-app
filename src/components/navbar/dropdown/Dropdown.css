@@ -1,11 +1,10 @@
 .dropdown {
   position: absolute;
   top: var(--nav-size);
-  background-color: var(--bg);
+  background-color: rgba(36,38,38, 0.95);
   border: var(--border);
   border-radius: var(--border-radius);
   padding: 0.5rem 1rem;
-  /* overflow: hidden; */
   z-index: 10;
   width: auto;
 }

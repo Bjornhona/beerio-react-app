@@ -22,9 +22,9 @@ const Dropdown = (props) => {
       </ul> :
     <ul className="dropdown dropdownLeft">
       <DropdownItem leftIcon={faBeer} link={"/beers"} handleClickItem={handleClickItem}>Beers</DropdownItem>
-      <DropdownItem leftIcon={faHeart} link={"/favorites"} handleClickItem={handleClickItem}>Favorites</DropdownItem>
-      <DropdownItem leftIcon={faUtensils} link={"/food-pairing"} handleClickItem={handleClickItem}>Food Pairing</DropdownItem>
       <DropdownItem leftIcon={faDatabase} link={"/breweries"} handleClickItem={handleClickItem}>Breweries</DropdownItem>
+      <DropdownItem leftIcon={faUtensils} link={"/food-pairing"} handleClickItem={handleClickItem}>Food Pairing</DropdownItem>
+      <DropdownItem leftIcon={faHeart} link={"/favorites"} handleClickItem={handleClickItem}>Favorites</DropdownItem>
       <DropdownItem leftIcon={faGamepad} link={"/play"} handleClickItem={handleClickItem}>Play</DropdownItem>
     </ul>
   )

@@ -54,10 +54,10 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-menu">
-          <a href="/beers"><p>Explore</p></a>
-          <a href="/favorites"><p>Favorites</p></a>
-          <a href="/food-pairing"><p>Food pairing</p></a>
+          <a href="/beers"><p>Beers</p></a>
           <a href="/breweries"><p>Breweries</p></a>
+          <a href="/food-pairing"><p>Food pairing</p></a>
+          <a href="/favorites"><p>Favorites</p></a>
           <a href="/play"><p>Play</p></a>
         </div>
 

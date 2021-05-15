@@ -25,7 +25,7 @@
   color: var(--lighter-brown);
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 768px) {
   .icon-button {
     --button-size: calc(var(--nav-size) * 0.5);
   }
