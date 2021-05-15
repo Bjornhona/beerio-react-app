@@ -74,6 +74,11 @@
   .sponsors-container span {
     padding-right: var(--xl);
   }
+
+  .logos-container img, .logos-container-two img {
+    height: var(--xl);
+    margin: 0 var(--xl);
+  }
 }
 
 @media (min-width: 1920px) {

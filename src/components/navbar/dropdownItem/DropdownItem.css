@@ -7,9 +7,12 @@
   margin: 10px 0;
 }
 
-.menu-item p{
-  padding-left: var(--s);
+.menu-item p {
+  padding: 0 var(--s);
   white-space: nowrap;
+  font-family: Montserrat-Bold, 'Times Sans Serif', sans-serif;
+  color: var(--light-brown);
+  text-transform: uppercase;
 }
 
 .menu-item .icon-left {

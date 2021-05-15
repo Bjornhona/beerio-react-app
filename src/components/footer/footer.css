@@ -35,3 +35,16 @@
     flex-wrap: nowrap;
   }
 }
+
+@media (min-width: 1080px) {
+  .footer {
+    padding: var(--xxl);
+  }
+}
+
+@media (min-width: 1920px) {
+  .footer {
+    padding: var(--xxxl);
+    gap: var(--m);
+  }
+}

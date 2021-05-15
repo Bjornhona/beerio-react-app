@@ -85,6 +85,11 @@ body {
     --nav-size: 90px;
   }
 }
+@media (min-width: 1920px) {
+  :root {
+    --nav-size: 120px;
+  }
+}
 
 ul {
   list-style: none;
