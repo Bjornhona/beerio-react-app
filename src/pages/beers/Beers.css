@@ -49,21 +49,8 @@
 .beers-title {
   display: flex;
   justify-content: space-between;
-  /* padding-top: 5px; */
   align-items: center;
 }
-
-/* .beers-title {
-  margin-top: 0;
-} */
-
-/* .beer-name, .organic {
-  padding: 15px;
-} */
-
-/* .beer-name h5 {
-  margin-top: 0;
-} */
 
 /* --- Responsive --- */
 

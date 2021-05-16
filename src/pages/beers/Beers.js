@@ -17,8 +17,8 @@ const Beers = () => {
     let ignore = false;
 
     const getBeers = async () => await beerService.getBeers()
-    .then(data => {if (!ignore) {
-      setBeersData(data);
+    .then(response => {if (!ignore) {
+      setBeersData(response);
       setIsLoading(false);
     }})
     .catch(error => console.error('Error'));
@@ -46,28 +46,25 @@ const Beers = () => {
             <input type="text" name="name" value={inputValue} onChange={handleSearchInput} placeholder="Search..." />
           </div>
         </div>
-        {/* <div className="beers-title"> */}
-          {/* <Link to='/home' className="back-sign"> */}
-            {/* <span role="img" aria-label="left-angle-bracket">〈</span> */}
-          {/* </Link> */}
-          {/* <h4>Explore the worlds best beers</h4> */}
-          {/* <span></span> */}
-        {/* </div> */}
         {isLoading ? <LoadingScreen /> : 
-        newData.map((item) => {      
-          const style = item.style && item.style.category.name;
-          item.isOrganic = 'Y' ? "Yes" : "No";
-          return (
-            <BeersItem
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              isOrganic={item.isOrganic}
-              icon={item.labels.icon}
-              style={style}
-            />
-          )
-        })}
+          newData !== [] ? newData.map(item => {      
+            const style = item.style && item.style.category.name;
+            item.isOrganic = 'Y' ? "Yes" : "No";
+            return (
+              <BeersItem
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                isOrganic={item.isOrganic}
+                icon={item.labels.icon}
+                style={style}
+              />
+            )
+          }) : 
+          <div className="no-response">
+            <p>No beers correspond to your search.</p>
+          </div>
+        }
       </div>
     </div>
   )
