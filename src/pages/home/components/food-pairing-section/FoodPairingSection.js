@@ -8,7 +8,7 @@ const FoodPairingSection = () => {
   // const root = document.querySelector(':root');
 
   return (
-    <div className="food-section">
+    <div className="food-section outer-content">
       <div className="food-content">
         <div className="left-food-content">
           <h2>Excellent beer and food pairing.</h2>

@@ -12,7 +12,7 @@ const BreweriesSection = () => {
   const rootStyles = getComputedStyle(root);
 
   return (
-    <div className="breweries-section">
+    <div className="breweries-section outer-content">
       <div className="breweries-content">
         <div className="right-breweries-content">
           <h2>Visit  breweries in your area.</h2>

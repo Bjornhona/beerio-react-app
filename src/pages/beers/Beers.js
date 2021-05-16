@@ -5,7 +5,8 @@ import BeersItem from '../../components/beers-item/BeersItem';
 import { beerService } from '../../lib/beer-service';
 import './Beers.css';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
-import Navbar from '../../components/navbar/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 const Beers = () => {
   const [inputValue, setInputValue] = useState('');
@@ -36,19 +37,22 @@ const Beers = () => {
   }
 
   return (
-    <>
-      <Navbar/>
-      <div className="beers-div section">
-        <div className="searchbar">
-          <input type="text" name="name" value={inputValue} onChange={handleSearchInput} placeholder="Search" />
+    <div className="beers-screen">
+      <div className="beers-div outer-content">
+        <div className="beers-div-header">
+          <h2>Find your beers.</h2>
+          <div className="beers-search">
+            <FontAwesomeIcon className="search-icon" icon={faSearch}/>
+            <input type="text" name="name" value={inputValue} onChange={handleSearchInput} placeholder="Search..." />
+          </div>
         </div>
-        <div className="beers-title">
-          <Link to='/home' className="back-sign">
-            <span role="img" aria-label="left-angle-bracket">〈</span>
-          </Link>
-          <h4>Explore the worlds best beers</h4>
-          <span></span>
-        </div>
+        {/* <div className="beers-title"> */}
+          {/* <Link to='/home' className="back-sign"> */}
+            {/* <span role="img" aria-label="left-angle-bracket">〈</span> */}
+          {/* </Link> */}
+          {/* <h4>Explore the worlds best beers</h4> */}
+          {/* <span></span> */}
+        {/* </div> */}
         {isLoading ? <LoadingScreen /> : 
         newData.map((item) => {      
           const style = item.style && item.style.category.name;
@@ -65,7 +69,7 @@ const Beers = () => {
           )
         })}
       </div>
-    </>
+    </div>
   )
 }
 

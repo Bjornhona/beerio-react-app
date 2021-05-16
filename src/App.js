@@ -10,7 +10,6 @@ import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Beers from './pages/beers/Beers';
 import Favorites from './pages/favorites/Favorites';
-import Recommended from './pages/recommended/Recommended';
 import NotFound from './pages/not-found/NotFound';
 import Beer from './pages/beer/Beer';
 import Play from './pages/play/Play';
@@ -19,13 +18,13 @@ import FoodPairing from './pages/food-pairing/FoodPairing';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, 
-  faBeer, faDatabase, faGlobeAmericas, faMapMarkedAlt, faUtensils } from '@fortawesome/free-solid-svg-icons';
-import {faFacebookF} from '@fortawesome/free-brands-svg-icons';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, 
+//   faBeer, faDatabase, faGlobeAmericas, faMapMarkedAlt, faUtensils } from '@fortawesome/free-solid-svg-icons';
+// import {faFacebookF} from '@fortawesome/free-brands-svg-icons';
 
-library.add(faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, faBeer, 
-  faDatabase, faGlobeAmericas, faMapMarkedAlt, faUtensils, faFacebookF);
+// library.add(faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, faBeer, 
+//   faDatabase, faGlobeAmericas, faMapMarkedAlt, faUtensils, faFacebookF);
 
 const App = () => {
 
@@ -37,11 +36,10 @@ const App = () => {
           <Switch>
             <PrivateRoute path="/home" component={Home} />
             <PrivateRoute exact path="/beers" component={Beers} />
-            <PrivateRoute path="/favorites" component={Favorites} />
-            <PrivateRoute path="/food-pairing" component={FoodPairing} />
-            <PrivateRoute path="/recommended" component={Recommended} />
             <PrivateRoute path="/beers/:id" component={Beer} />
             <PrivateRoute path="/breweries" component={Breweries} />
+            <PrivateRoute path="/food-pairing" component={FoodPairing} />
+            <PrivateRoute path="/favorites" component={Favorites} />
             {/* <PrivateRoute path="/breweries/:id" component={Brewery} /> */}
             <PrivateRoute path="/play" component={Play} />
           </Switch>

@@ -3,7 +3,6 @@
 .food-section {
   background-image: radial-gradient(circle at 35%, rgba(255, 255, 255, 0.2) 20%, transparent, transparent);
   background-color: var(--bg-accent);
-  padding: var(--m);
 }
 
 .food-content {
@@ -23,6 +22,7 @@
   grid-area: a;
   font-size: 2em;
   padding-bottom: var(--m);
+  color: var(--yellow);
 }
 
 .left-food-content h6 {
@@ -97,10 +97,6 @@
 }
 
 @media (min-width: 768px) {
-  .food-section {
-    padding: var(--l);
-  }
-
   .food-content {
     grid-template-columns: 3fr 2fr;
     grid-template-rows: auto auto;
@@ -131,10 +127,6 @@
 }
 
 @media (min-width: 1080px) {
-  .food-section {
-    padding: var(--xxl);
-  }
-
   .left-food-content {
     width: 90%;
   }
@@ -145,10 +137,6 @@
 }
 
 @media (min-width: 1920px) {
-  .food-section {
-    padding: var(--xxxl);
-  }
-
   .left-food-content {
     width: 75%;
   }
