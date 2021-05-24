@@ -9,12 +9,15 @@ const BeersItem = ({id, name, isOrganic, icon, style}) => {
 
   return (
     <Link to={`/beers/${id}`} >
-      <div className='beers-container'>
-      <div className='img-name-div'>
-        {icon && <img src={icon} alt={name} />}
-        <div className="beer-name">
-          <h6><strong>{name}</strong></h6>
-          <p>{style}</p>
+      <div className='beers-item-content'>
+        {icon && 
+          <img src={icon} alt={name} />
+        }
+        <div className="beers-item-center">
+          <div className="beer-text">
+            <h6><strong>{name}</strong></h6>
+            <p>{style}</p>
+          </div>
           <div className="organic">
             <p><strong>Organic: </strong>{isOrganic}</p>
             <Heart
@@ -22,12 +25,10 @@ const BeersItem = ({id, name, isOrganic, icon, style}) => {
               name={name}
               isOrganic={isOrganic}
               icon={icon}
-              style={style}
-            />
+              style={style}/>
           </div>
         </div>
-          <FontAwesomeIcon className="arrow" icon={faChevronRight}/>
-        </div>
+        <FontAwesomeIcon icon={faChevronRight} className="arrow"/>
       </div>
     </Link>
   )

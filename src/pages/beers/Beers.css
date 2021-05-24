@@ -17,10 +17,10 @@
 }
 
 .search-icon {
-  padding: 15px;
+  padding: var(--s);
   height: var(--l);
   position: absolute;
-  min-width: 45px;
+  min-width: var(--l);
   color: var(--lighter-grey);
 }
 
@@ -52,6 +52,13 @@
   align-items: center;
 }
 
+.no-response {
+  color: var(--bg);
+  padding: var(--l);
+  height: 100vh;
+  width: 100vw;
+}
+
 /* --- Responsive --- */
 
 @media (max-width: 767px) {
@@ -74,4 +81,15 @@
   .beers-search {
     width: calc(var(--xxxl) * 2);
   }
+
+  .beers-item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(2 * var(--xxl) + 2 * var(--s)));
+    grid-column-gap: var(--s);
+    justify-content: space-between;
+    overflow: hidden;
+    grid-template-rows: auto auto repeat(10, minmax(0, 0));
+  }
 }
+
+/* @medi (min-width: ) {} */

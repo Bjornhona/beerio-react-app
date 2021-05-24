@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { withAuth } from '../../lib/authContext';
-import { Link } from 'react-router-dom';
 import BeersItem from '../../components/beers-item/BeersItem';
 import { beerService } from '../../lib/beer-service';
 import './Beers.css';
@@ -29,12 +28,19 @@ const Beers = () => {
 
   const newData = beersData.filter((item) => {
     let dataName = item.name.toUpperCase();
-    return dataName.includes(inputValue.toUpperCase())
+    return dataName.includes(inputValue.toUpperCase());
   });
 
   const handleSearchInput = (event) => {
     setInputValue(event.target.value);
+    // setBeersData(beersData.filter(item => {
+    //   let dataName = item.name.toUpperCase();
+    //   return dataName.includes(inputValue.toUpperCase());
+    // }));
   }
+
+  // console.log(beersData);
+  // console.log(newData);
 
   return (
     <div className="beers-screen">
@@ -47,20 +53,21 @@ const Beers = () => {
           </div>
         </div>
         {isLoading ? <LoadingScreen /> : 
-          newData !== [] ? newData.map(item => {      
-            const style = item.style && item.style.category.name;
-            item.isOrganic = 'Y' ? "Yes" : "No";
-            return (
-              <BeersItem
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                isOrganic={item.isOrganic}
-                icon={item.labels.icon}
-                style={style}
-              />
-            )
-          }) : 
+          newData !== [] ? 
+            <div className="beers-item-container">{newData.map(item => {      
+              const style = item.style && item.style.category.name;
+              item.isOrganic = 'Y' ? "Yes" : "No";
+              return (
+                <BeersItem
+                  key={item.id}
+                  id={item.id}
+                  name={item.name}
+                  isOrganic={item.isOrganic}
+                  icon={item.labels.icon}
+                  style={style}
+                />
+              )
+            })}</div> : 
           <div className="no-response">
             <p>No beers correspond to your search.</p>
           </div>

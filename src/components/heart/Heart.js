@@ -42,7 +42,7 @@ const Heart = ({id, name, isOrganic, icon, style}) => {
   }
   
   return (
-    <div>
+    <div className="heart-icon">
       <span className={isFavorite ? "heart red-heart" : "heart"}>
         <FontAwesomeIcon icon={isFavorite ? faHeart : outlinedHeart} onClick={handleFavorites}/>
       </span>
