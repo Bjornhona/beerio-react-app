@@ -15,32 +15,23 @@ const Beers = () => {
   useEffect(() => {
     let ignore = false;
 
-    const getBeers = async () => await beerService.getBeers()
+    const getBeers = () => beerService.getBeers()
     .then(response => {if (!ignore) {
       setBeersData(response);
       setIsLoading(false);
     }})
-    .catch(error => console.error('Error'));
-    getBeers();
+    .catch(error => console.error(error));
+
+    const getSearch = (query) => beerService.getSearch(query)
+    .then(response => setBeersData(response))
+    .catch(error => console.error(error));
+
+    inputValue !== '' ? getSearch(inputValue) : getBeers();
 
     return () => {ignore = true}
-  }, []);
+  }, [inputValue]);
 
-  const newData = beersData.filter((item) => {
-    let dataName = item.name.toUpperCase();
-    return dataName.includes(inputValue.toUpperCase());
-  });
-
-  const handleSearchInput = (event) => {
-    setInputValue(event.target.value);
-    // setBeersData(beersData.filter(item => {
-    //   let dataName = item.name.toUpperCase();
-    //   return dataName.includes(inputValue.toUpperCase());
-    // }));
-  }
-
-  // console.log(beersData);
-  // console.log(newData);
+  const handleSearchInput = (event) => setInputValue(event.target.value);
 
   return (
     <div className="beers-screen">
@@ -49,27 +40,33 @@ const Beers = () => {
           <h2>Find your beers.</h2>
           <div className="beers-search">
             <FontAwesomeIcon className="search-icon" icon={faSearch}/>
-            <input type="text" name="name" value={inputValue} onChange={handleSearchInput} placeholder="Search..." />
+            <input  type="text"
+                    name="name" 
+                    value={inputValue} 
+                    onChange={handleSearchInput} 
+                    placeholder="Search..." />
           </div>
         </div>
         {isLoading ? <LoadingScreen /> : 
-          newData !== [] ? 
-            <div className="beers-item-container">{newData.map(item => {      
-              const style = item.style && item.style.category.name;
-              item.isOrganic = 'Y' ? "Yes" : "No";
-              return (
-                <BeersItem
-                  key={item.id}
-                  id={item.id}
-                  name={item.name}
-                  isOrganic={item.isOrganic}
-                  icon={item.labels.icon}
-                  style={style}
-                />
-              )
-            })}</div> : 
+          beersData && beersData.length !== 0 ? 
+            <div className="beers-item-container">
+              {beersData.map(item => {    
+                const style = item.style && item.style.category.name;
+                item.isOrganic = 'Y' ? "Yes" : "No";
+                return (
+                  <BeersItem
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    isOrganic={item.isOrganic}
+                    icon={item.labels.medium}
+                    style={style}
+                  />
+                )
+              })}
+            </div> :
           <div className="no-response">
-            <p>No beers correspond to your search.</p>
+            <p>No beers matched your search.</p>
           </div>
         }
       </div>

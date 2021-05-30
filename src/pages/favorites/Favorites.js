@@ -12,12 +12,9 @@ const Favorites = (props) => {
     let ignore = false;
 
     const fetchFavorites = () => beerService.getFavorites()
-    .then(result => {
-      if (!ignore) {
-        setFavorites(result);
-      }
-    })
+    .then(result => !ignore && setFavorites(result))
     .catch(error => console.error('Error'));
+    
     fetchFavorites();
 
     return () => {ignore = true};

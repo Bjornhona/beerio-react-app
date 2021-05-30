@@ -14,6 +14,12 @@ class BeerService {
     .catch(error => console.error('Error'));
   }
 
+  getSearch(query) {
+    return this.beer.get(`/beers/search/${query}`)
+    .then(({data}) => data)
+    .catch(error => console.error('Error'));
+  }
+
   getFavorites() {
     return this.beer.get('/beers/favorites')
     .then(({data}) => data)
