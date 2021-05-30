@@ -1,0 +1,26 @@
+header {
+  position: relative;
+  min-height: 470px;
+  /* background-image: radial-gradient(circle at 35%, rgba(0, 0, 0, 0.7) 20%, transparent, transparent), url('./beer-1513436_1920.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header h6 {
+  color: var(--white);
+}
+
+.header-gradient-overlay {
+  position: absolute;
+  background: radial-gradient(circle at 35%, rgba(0, 0, 0, 0.7) 20%, transparent, transparent);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.inner-content h2 {
+  padding-bottom: var(--l);
+  /* max-width: 35 * var(--xs); */
+}

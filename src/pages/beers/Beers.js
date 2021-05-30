@@ -4,8 +4,10 @@ import BeersItem from '../../components/beers-item/BeersItem';
 import { beerService } from '../../lib/beer-service';
 import './Beers.css';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
+import HeaderSection from '../../components/header-section/HeaderSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import headerImage from './oak-4891183_1920.jpg';
 
 const Beers = () => {
   const [inputValue, setInputValue] = useState('');
@@ -35,6 +37,10 @@ const Beers = () => {
 
   return (
     <div className="beers-screen">
+      <HeaderSection 
+        headline="Explore the world of beers"
+        breadText="Start the adventure of searching, saving and learning about more than 3000 beers."
+        image={headerImage}/>
       <div className="beers-div outer-content">
         <div className="beers-div-header">
           <h2>Find your beers.</h2>
