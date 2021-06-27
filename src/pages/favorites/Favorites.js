@@ -1,18 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { withAuth } from '../../lib/authContext';
-import { Link } from 'react-router-dom';
 import { beerService } from '../../lib/beer-service';
 import BeersItem from '../../components/beers-item/BeersItem';
 import './Favorites.css';
+import BackButton from '../../components/back-button/BackButton';
+import HeaderSection from '../../components/header-section/HeaderSection';
+import headerImage from '../beers/oak-4891183_1920.jpg';
+import LoadingScreen from '../../components/loading-screen/LoadingScreen';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 const Favorites = (props) => {
   const [favorites, setFavorites] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     let ignore = false;
 
     const fetchFavorites = () => beerService.getFavorites()
-    .then(result => !ignore && setFavorites(result))
+    .then(result => {!ignore && 
+      setFiltered(result);
+      setFavorites(result);
+    })
+    .then(() => setIsLoading(false))
     .catch(error => console.error('Error'));
     
     fetchFavorites();
@@ -20,29 +32,58 @@ const Favorites = (props) => {
     return () => {ignore = true};
   }, []);
 
+  const handleSearchInput = (event) => {
+    const input = event.target.value;    
+    const filtered = favorites.filter(favorite => favorite.name.toLowerCase().includes(input.toLowerCase()));
+    
+    setInputValue(input);
+    setFiltered(filtered);
+  }
+
   return (
     <div className="section">
-      <div className="beers-title">
-        <Link to='/home' className="menu-button back"><span role="img" aria-label="left-angle-bracket">〈</span></Link>
-        <h4>My Favorite Beers</h4>
-      </div>
-      {favorites.length < 1 ? <p>You have not selected any favorites yet.</p> : 
-        favorites.map(item => {
-          const {id, name, isOrganic, icon, style} = item;
-          return (
-            <BeersItem 
-              key={id}
-              id={id}
-              name={name}
-              isOrganic={isOrganic}
-              icon={icon}
-              style={style}
-            />
-          )
-        })
+      <HeaderSection 
+        headline="My Favorite Beers"
+        breadText="All your favourite beers saved for future enjoyable moments."
+        image={headerImage}/>
+      <div className="beers-div outer-content">
+        <div className="beers-div-header">
+          <h2>Find your favorites.</h2>
+          <div className="beers-search">
+            <FontAwesomeIcon className="search-icon" icon={faSearch}/>
+            <input  type="text"
+                    name="name" 
+                    value={inputValue} 
+                    onChange={handleSearchInput} 
+                    placeholder="Search..." />
+          </div>
+        </div>
+      {isLoading ? 
+        <LoadingScreen /> : 
+        favorites && favorites.length < 1 ? 
+          <div className="no-response">
+            <p>You have not selected any favorites yet or no favorites matched your search.</p>
+          </div> : 
+          <div className="beers-item-container"> 
+            {filtered.map(item => {
+                const {id, name, isOrganic, icon, style} = item;
+                return (
+                  <BeersItem 
+                    key={id}
+                    id={id}
+                    name={name}
+                    isOrganic={isOrganic}
+                    icon={icon}
+                    style={style}
+                  />
+                )
+            })}
+          </div>
       }
+      </div>
+      <BackButton/>
     </div>
-  );
+  )
 }
 
 export default withAuth(Favorites);

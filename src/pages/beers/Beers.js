@@ -8,6 +8,7 @@ import HeaderSection from '../../components/header-section/HeaderSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import headerImage from './oak-4891183_1920.jpg';
+import BackButton from '../../components/back-button/BackButton';
 
 const Beers = () => {
   const [inputValue, setInputValue] = useState('');
@@ -76,6 +77,7 @@ const Beers = () => {
           </div>
         }
       </div>
+      <BackButton/>
     </div>
   )
 }
