@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { withAuth } from '../../lib/authContext';
-import { useRouteMatch, Redirect, useHistory } from 'react-router-dom';
+import { useRouteMatch, Redirect } from 'react-router-dom';
 import './Beer.css';
 import { beerService } from '../../lib/beer-service';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
 import Heart from '../../components/heart/Heart';
+import headerImage from './beer-428121_1920.jpg';
+import HeaderSection from '../../components/header-section/HeaderSection';
+import BackButton from '../../components/back-button/BackButton';
 
 const Beer = () => {
   let match = useRouteMatch();
@@ -18,7 +21,6 @@ const Beer = () => {
   const newStyle = style && style.category.name;
   const newIcon = labels && labels.icon;
   const newIsOrganic = isOrganic === 'Y' ? "Yes" : "No";
-  const history = useHistory();
 
   useEffect(() => {
     let ignore = false;
@@ -42,52 +44,51 @@ const Beer = () => {
     return () => {ignore = true}
   }, [id]);
 
-  const goBack = () => {
-    history.goBack();
-  }
-
   return (
-    isLoading ? <LoadingScreen /> : 
+    <>
+      <HeaderSection 
+        headline="Explore the world of beers"
+        breadText="Start the adventure of searching, saving and learning about more than 3000 beers."
+        image={headerImage}/>
+
+      {isLoading ? <LoadingScreen /> :
       redirect ? <Redirect to='/notfound'/> :
-        <div className="outer-content">
-          <div className="beer-container">
-            <div className="back-heart">
-              <div 
-                className="go-back" 
-                onClick={goBack}>
-                <span role="img" aria-label="left-angle-bracket">〈</span>
+      <>
+        <div className="beer-section outer-content">
+          <div className="beer-content">
+            <div className="left-beer-content">
+              <div className="headline-row">
+                <h2>{name}.</h2>
+                <Heart
+                  id={id}
+                  name={name}
+                  isOrganic={newIsOrganic}
+                  icon={newIcon}
+                  style={newStyle}
+                />
               </div>
-              <Heart
-                id={id}
-                name={name}
-                isOrganic={newIsOrganic}
-                icon={newIcon}
-                style={newStyle}
-              />
+              <h4>{style && style.name}</h4>
+              <h6>{newStyle}</h6>
+              <p>{style && style.year}</p>
+              <p>{style && style.description}</p>
             </div>
 
-            {labels && <div className="label-img">
-              <div>
-                <img className="big-label-img" src={labels.large} alt="No pic" />
-              </div>
+            {labels &&
+            <div className="right-beer-content">
+              <div><img className="big-label-img" src={labels.large} alt="big beer label"/></div>
             </div>}
-
-            <h1>{name}</h1>
-            {style && 
-              <>
-                <h5>{style.name}</h5>
-                <h6>{newStyle}</h6>
-                <p>{style.year}</p>
-                <p>{style.description}</p>
-              </>
-            }
-            <div className="beer-info">
-              <div><strong>Abv: </strong>{abv}%</div>
-              <div><strong>Ibu: </strong>{style && style.ibuMax}</div>
-              <div><strong>Organic Beer:</strong> {newIsOrganic}</div>
-            </div>
           </div>
         </div>
+        <div className="bottom-beer-content beer-section outer-content">
+              <div className="beer-info">
+                <div><strong>Abv: </strong>{abv}%</div>
+                <div><strong>Ibu: </strong>{style && style.ibuMax}</div>
+                <div><strong>Organic Beer:</strong> {newIsOrganic}</div>
+              </div>
+            </div>
+        <BackButton />
+      </>}
+    </>
   )
 }
 

@@ -3,6 +3,7 @@ import './Navbar.css';
 import NavItem from './nav-item/NavItem';
 import Dropdown from './dropdown/Dropdown';
 import { faUser, faBars } from '@fortawesome/free-solid-svg-icons';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
   const node = useRef();
@@ -44,21 +45,21 @@ const Navbar = () => {
     <nav className='navbar' ref={node}>
       <ul className='navbar-nav'>
         <span className="left-nav-item">
-          <NavItem className="left-navbar-item" icon={faBars} isOpen={openLeft} handleOpen={() => handleOpen("left")}>
+          <NavItem icon={faBars} isOpen={openLeft} handleOpen={() => handleOpen("left")}>
             <Dropdown menuLeft handleClickItem={handleClickItem} />
           </NavItem>
         </span>
 
         <div className="header-logo-container">
-          <a href="/home"><h1 className='nav-headline'>Beerio</h1></a>
+          <Link to="/home"><h1 className='nav-headline'>Beerio</h1></Link>
         </div>
 
         <div className="navbar-menu">
-          <a href="/beers"><p>Beers</p></a>
-          <a href="/breweries"><p>Breweries</p></a>
-          <a href="/food-pairing"><p>Food pairing</p></a>
-          <a href="/favorites"><p>Favorites</p></a>
-          <a href="/play"><p>Play</p></a>
+          <Link to="/beers"><p>Beers</p></Link>
+          <Link to="/breweries"><p>Breweries</p></Link>
+          <Link to="/food-pairing"><p>Food pairing</p></Link>
+          <Link to="/favorites"><p>Favorites</p></Link>
+          <Link to="/play"><p>Play</p></Link>
         </div>
 
         <NavItem icon={faUser} isOpen={openRight} handleOpen={() => handleOpen("right")}>

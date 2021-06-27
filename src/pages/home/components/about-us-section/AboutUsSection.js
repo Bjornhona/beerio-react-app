@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutUsCard from './AboutUsCard';
 import './aboutUsSection.css';
-import image from '../header-section/beer-1513436_1920.jpg';
+import image from '../../beer-1513436_1920.jpg';
 import testImage from './pexels-lluis-aragones-4536850.jpg';
 
 const AboutUsSection = () => {

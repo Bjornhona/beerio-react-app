@@ -1,0 +1,60 @@
+.backbutton-container {
+  position: fixed;
+  bottom: var(--m);
+  right: var(--m);
+  width: var(--xl);
+  height: var(--xl);
+  cursor: pointer;
+}
+
+.back-button-background:hover {
+  background-color: var(--yellow);
+  color: var(--bg-accent);
+}
+
+.back-button-background {
+  background-color: var(--orange);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.back-arrow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-size: var(--m);
+  margin-left: calc((-1) * var(--m) / 3);
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .backbutton-container {
+    bottom: var(--l);
+    right: var(--l);
+    width: calc(var(--xl) + var(--s));
+    height: calc(var(--xl) + var(--s));
+  }
+
+  .back-arrow {
+    font-size: calc((var(--xl) + var(--s)) / 2);
+    margin-left: calc((-1) * (calc(var(--xl) + var(--s)) / 2) / 3);
+  }
+}
+
+@media (min-width: 1080px) {
+  .backbutton-container {
+    bottom: var(--xl);
+    right: var(--xl);  
+    width: var(--xxl);
+    height: var(--xxl);
+  }
+
+  .back-arrow {
+    font-size: var(--l);
+    margin-left: calc((-1) * var(--l) / 3);
+  }
+}

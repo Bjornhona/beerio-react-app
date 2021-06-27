@@ -6,15 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const HomeItem = (props) => {
   const { link, headerText, description, iconName, iconClass } = props;
 
+  // Delete this component that is not used!
   return (
     <Link to={link} className='home-container'>
-      <div className="home-text">
+      {/* <div className="home-text">
         <h4>{headerText.toUpperCase()}</h4>
         <p>{description}</p>
       </div>
       <div className="home-icon">
         <FontAwesomeIcon icon={iconName} className={iconClass} />
-      </div>
+      </div> */}
     </Link>
   )
 }
