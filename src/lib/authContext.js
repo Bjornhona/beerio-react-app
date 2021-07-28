@@ -23,21 +23,21 @@ const AuthContext = (props) => {
     let ignore = false;
 
     const getAuthService = async () => {
-      await authService.me()
-      .then(user => {
-        // console.log("User found as" + user);
+      try {
+        const user = await authService.me();
+        // User found as "user"
         if (!ignore) {
           setUser(user);
           setIsLogged(true);
           setIsLoading(false);
         }
-      })
-      .catch((error) => {
-        // console.log("User not found and set to null");
+      }
+      catch (error) {
+        // User not found and set to null
         setIsLogged(false);
         setUser(null);
         setIsLoading(false);
-      });
+      };
     };
     getAuthService();
 
