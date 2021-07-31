@@ -25,7 +25,7 @@ const Beers = () => {
     }})
     .catch(error => console.error(error));
 
-    const getSearch = (query) => beerService.getSearch(query)
+    const getSearch = (query) => beerService.getSearch("beer", query)
     .then(response => setBeersData(response))
     .catch(error => console.error(error));
 

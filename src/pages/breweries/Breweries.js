@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { beerService } from '../../lib/beer-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 const Breweries = () => {
   const [breweriesData, setBreweriesData] = useState([]);
@@ -7,6 +9,7 @@ const Breweries = () => {
   const [zipCode, setZipCode] = useState("");
   const [locationsData, setLocationsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     let ignore = false;
@@ -18,10 +21,50 @@ const Breweries = () => {
     .then(() => setIsLoading(false))
     .catch(error => console.error('Error: No data received from API'));
 
-    getBreweries();
+
+    const getSearchBrewery = (query) => beerService.getSearch("brewery", query)
+    .then(response => {
+      console.log(response)
+      return setBreweriesData(response)
+    })
+    .catch(error => console.error(error));
+
+    inputValue !== '' ? getSearchBrewery(inputValue) : getBreweries();
+
+
+    // getBreweries();
 
     return () => {ignore = true}
-  }, []);
+  }, [inputValue]);
+
+  const handleSearchInput = (event) => setInputValue(event.target.value);
+
+
+  // const [inputValue, setInputValue] = useState('');
+  // const [beersData, setBeersData] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  
+  // useEffect(() => {
+  //   let ignore = false;
+
+    // const getBeers = () => beerService.getBeers()
+    // .then(response => {if (!ignore) {
+    //   setBeersData(response);
+    //   setIsLoading(false);
+    // }})
+    // .catch(error => console.error(error));
+
+  //   const getSearch = (query) => beerService.getSearch("beer", query)
+  //   .then(response => setBeersData(response))
+  //   .catch(error => console.error(error));
+
+  //   inputValue !== '' ? getSearch(inputValue) : getBeers();
+
+  //   return () => {ignore = true}
+  // }, [inputValue]);
+
+  // const handleSearchInput = (event) => setInputValue(event.target.value);
+
 
   const fetchBreweryAddress = (event) => {
     const breweryId = event.target.value;
@@ -39,21 +82,30 @@ const Breweries = () => {
 
   const handleInputChange = (event) => setZipCode(event.target.value);
 
-// console.log(breweriesData);
+console.log(breweriesData);
 
   return (
     <>
       {isLoading ? <p>Loading...</p> :
       <div>
         <h2>Breweries</h2>
-
+        {breweriesData && breweriesData.length !== 0 &&
         <select id="breweries" name="Breweries" onChange={event => fetchBreweryAddress(event)}> 
           {breweriesData.map(brewery => 
               <option key={brewery.id} value={brewery.id}>
                 {brewery.name}
               </option>
           )}
-        </select>
+        </select>}
+
+        <div className="beers-search">
+          <FontAwesomeIcon className="search-icon" icon={faSearch}/>
+          <input  type="text"
+                  name="name" 
+                  value={inputValue} 
+                  onChange={handleSearchInput} 
+                  placeholder="Search..." />
+        </div>
 
       {breweryData !== [] && breweryData.map(location => {
         let breweryInformation = {};

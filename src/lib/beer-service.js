@@ -14,8 +14,8 @@ class BeerService {
     .catch(error => console.error('Error'));
   }
 
-  getSearch(query) {
-    return this.beer.get(`/beers/search/${query}`)
+  getSearch(type, query) {
+    return this.beer.get(`/beers/search/${type}/${query}`)
     .then(({data}) => data)
     .catch(error => console.error('Error'));
   }
