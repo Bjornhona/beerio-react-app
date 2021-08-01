@@ -1,13 +1,13 @@
 import React from 'react';
-import NavItem from '../../components/navbar/Navbar';
+import BackButton from '../../components/back-button/BackButton';
 
 const Brewery = () => {
   return (
     <>
-      <Navbar/>
       <div>
         <p>Brewery</p>
       </div>
+      <BackButton/>
     </>
   )
 }

@@ -5,7 +5,7 @@ import BeersItem from '../../components/beers-item/BeersItem';
 import './Favorites.css';
 import BackButton from '../../components/back-button/BackButton';
 import HeaderSection from '../../components/header-section/HeaderSection';
-import headerImage from '../beers/oak-4891183_1920.jpg';
+import headerImage from '../beers/pexels-pixabay-434311.jpg';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';

@@ -17,6 +17,7 @@ import Breweries from './pages/breweries/Breweries';
 import FoodPairing from './pages/food-pairing/FoodPairing';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+import Brewery from './pages/brewery/Brewery';
 
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, 
@@ -37,10 +38,10 @@ const App = () => {
             <PrivateRoute path="/home" component={Home} />
             <PrivateRoute exact path="/beers" component={Beers} />
             <PrivateRoute path="/beers/:id" component={Beer} />
-            <PrivateRoute path="/breweries" component={Breweries} />
+            <PrivateRoute exact path="/breweries" component={Breweries} />
+            <PrivateRoute path="/breweries/:id" component={Brewery} />
             <PrivateRoute path="/food-pairing" component={FoodPairing} />
             <PrivateRoute path="/favorites" component={Favorites} />
-            {/* <PrivateRoute path="/breweries/:id" component={Brewery} /> */}
             <PrivateRoute path="/play" component={Play} />
           </Switch>
         <Footer/>
