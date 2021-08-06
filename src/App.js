@@ -17,7 +17,7 @@ import Breweries from './pages/breweries/Breweries';
 import FoodPairing from './pages/food-pairing/FoodPairing';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
-import Brewery from './pages/brewery/Brewery';
+import Brewery from './pages/brewery/BreweryContainer';
 
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faPlayCircle, faSearch, faHeart, faStar, faUser, faBars, 

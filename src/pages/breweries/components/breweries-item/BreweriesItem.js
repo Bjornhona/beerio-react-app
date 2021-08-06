@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
-const BreweriesItem = ({isOrganic, breweryData}) => {
+const BreweriesItem = ({breweryData, setBrewery}) => {
   const icon = breweryData.images.squareMedium;
 
   return (
-    <Link to={`/breweries/${breweryData.id}`} >
+    <Link to={{pathname: `/breweries/${breweryData.id}`}} onClick={() => setBrewery(breweryData)} >
       <div className='beers-item-content'>
         {icon && 
           <img src={icon} alt={breweryData.name} />
@@ -19,7 +19,7 @@ const BreweriesItem = ({isOrganic, breweryData}) => {
             <p>{breweryData.established}</p>
           </div>
           <div className="organic">
-            <p><strong>Breweries: </strong>{breweryData.locations.length}</p>
+            <p><strong>Breweries: </strong>{breweryData.locations && breweryData.locations.length}</p>
           </div>
         </div>
         <FontAwesomeIcon icon={faChevronRight} className="arrow"/>

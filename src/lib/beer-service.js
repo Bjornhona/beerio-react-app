@@ -44,8 +44,14 @@ class BeerService {
     .catch(error => console.error('Error'));
   }
 
-  getBrewery(brewerieId) {
-    return this.beer.get(`/beers/brewery/${brewerieId}/locations`)
+  getBreweryById(breweryId) {
+    return this.beer.get(`/beers/brewery/${breweryId}`)
+    .then(({data}) => data)
+    .catch(error => console.error('Error'));
+  }
+
+  getBrewery(breweryId) {
+    return this.beer.get(`/beers/brewery/${breweryId}/locations`)
     .then(({data}) => data)
     .catch(error => console.error('Error'));
   }

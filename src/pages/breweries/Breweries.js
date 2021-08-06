@@ -7,7 +7,7 @@ import headerImage from './brew-1031484_1920.jpg';
 import HeaderSection from '../../components/header-section/HeaderSection';
 import BackButton from '../../components/back-button/BackButton';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
-import BreweriesItem from './components/breweries-item/BreweriesItem';
+import BreweriesItem from './components/breweries-item/BreweriesItemContainer';
 
 const Breweries = () => {
   const [breweriesData, setBreweriesData] = useState([]);
@@ -189,12 +189,7 @@ console.log(breweriesData);
               {breweriesData.map(item => 
                   <BreweriesItem
                     key={item.id}
-                    // id={item.id}
                     breweryData={item}
-                    // name={item.name}
-                    // isOrganic={item.isOrganic}
-                    // icon={item.images.squareMedium}
-                    // style={style}
                   />
               )}
             </div> :
