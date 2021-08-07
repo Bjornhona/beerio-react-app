@@ -13,7 +13,7 @@
 }
 
 .beers-search input {
-  padding: 0 45px;
+  padding: 0 var(--l);
 }
 
 .search-icon {

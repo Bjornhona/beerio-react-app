@@ -1,4 +1,5 @@
 import React from 'react';
+import './brewery.css';
 import BackButton from '../../components/back-button/BackButton';
 
 const Brewery = ({breweryState}) => {
