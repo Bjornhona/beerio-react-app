@@ -1,0 +1,39 @@
+.location-pin {
+  height: var(--m);
+  position: absolute;
+  left: calc(-1 * var(--l)/2);
+  bottom: calc(var(--l)/2);
+  color: var(--red);
+}
+
+.svg-inline--fa.fa-w-12 {
+  width: var(--l);
+}
+
+.gm-style {
+  font: 400 calc(var(--l)/2) Roboto, Arial, sans-serif;;
+}
+
+
+/* Tooltip */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: calc(var(--xxl)*2);
+  background-color: var(--white);
+  color: var(--bg-accent);
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

@@ -1,0 +1,16 @@
+.address-bar {
+  background-color: var(--light-brown);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.left-address-field h4 {
+  padding-bottom: var(--s);
+}
+
+.right-address-field {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: var(--s);
+  align-items: center;
+}

@@ -16,7 +16,7 @@
   transition: filter 200ms;
 }
 
-.icon-button:hover {
+.clickable .icon-button:hover {
   filter: brightness(1.2);
 }
 

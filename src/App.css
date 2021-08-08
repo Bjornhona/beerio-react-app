@@ -154,7 +154,9 @@ h3 {
 }
 
 h4 {
+  font-family: Montserrat-Medium, 'Times Sans Serif', sans-serif;
   font-size: 1.25em;
+  line-height: 120%;
 }
 
 h5 {
@@ -164,6 +166,7 @@ h5 {
 
 h6 {
   font-size: 0.75em;
+  line-height: 120%;
 }
 
 p {

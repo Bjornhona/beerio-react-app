@@ -6,7 +6,7 @@ const NavItem = (props) => {
   const {isOpen, icon, handleOpen} = props;
 
   return (
-    <li className='nav-item'>
+    <li className={handleOpen ? 'nav-item clickable' : 'nav-item'}>
       <span
         className='icon-button'
         onClick={handleOpen}

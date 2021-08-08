@@ -1,0 +1,45 @@
+.brewery-content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: var(--l);
+  grid-template-areas:
+    "a"
+    "b";
+}
+
+.left-brewery-content {
+  grid-area: a;
+}
+
+.left-brewery-content h2 {
+  font-size: 2em;
+  padding-bottom: var(--m);
+}
+
+.left-brewery-content h6 {
+  padding-bottom: var(--m);
+}
+
+/* --- responsive --- */
+
+@media (min-width: 768px) {
+  .brewery-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-column-gap: var(--m);
+    grid-row-gap: 0;
+    grid-template-areas:
+    "a b";
+  }
+
+  .right-brewery-content {
+    display: flex;
+    align-items: center;  }
+}
+
+@media (min-width: 1080px) {
+  .brewery-content {
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: var(--l);
+  }
+}

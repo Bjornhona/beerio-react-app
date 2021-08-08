@@ -1,36 +1,49 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './brewery.css';
+import { withAuth } from '../../lib/authContext';
 import BackButton from '../../components/back-button/BackButton';
+import HeaderSection from '../../components/header-section/HeaderSection';
+import headerImage from './factory-1518504_1920.jpg';
+import Map from '../../components/map/Map';
+import AddressBar from '../../components/addressBar/AddressBar';
 
 const Brewery = ({breweryState}) => {
+  const [selectedBrewery, setSelectedBrewery] = useState();
  
-  console.log(breweryState.locations && breweryState.locations);
-
   return (
     <>
-      <div>
-        <p>{breweryState.name}</p>
-        {breweryState.established && <p>Established in {breweryState.established}</p>}
-        <p>{breweryState.website}</p>
-        <p>{breweryState.description}</p>
-        <p>{breweryState.mailingListUrl}</p>
-        <div>
-          <img src={breweryState.images.squareMedium} alt="brewery brand" />
+      <HeaderSection 
+        headline="Start your brewery adventure"
+        breadText="Search among your favourite breweries to plan your next visit."
+        image={headerImage}/>
+
+      <div className="brewery-section outer-content">
+        <div className="brewery-content">
+
+          <div className="left-brewery-content">
+            <h2>{breweryState.name}.</h2>
+            {breweryState.established && <h4>Established in {breweryState.established}</h4>}
+            <h6>{breweryState.website}</h6>
+            <p>{breweryState.description}</p>
+            <p>{breweryState.mailingListUrl}</p>
+          </div>
+
+          <div className="right-brewery-content">
+            <div><img className="big-label-img" src={breweryState.images.squareLarge} alt="brewery brand"/></div>
+          </div>
+
         </div>
       </div>
-      <div>
-        {breweryState.locations && breweryState.locations.map(location => {
-          return (
-            <div key={location.id}>
-              <p>{location.latitude}</p>
-              <p>{location.longitude}</p>
-            </div>
-            )
-        })}
-      </div>
+
+      {breweryState.locations &&
+        <Map locations={breweryState.locations} setSelectedBrewery={setSelectedBrewery} />}
+
+      {selectedBrewery &&
+        <AddressBar breweryItem={selectedBrewery} email={breweryState.mailingListUrl} />}
+
       <BackButton/>
     </>
   )
 }
 
-export default Brewery;
+export default withAuth(Brewery);

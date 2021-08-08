@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './breweries.css';
+import { withAuth } from '../../lib/authContext';
 import { beerService } from '../../lib/beer-service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
@@ -118,4 +119,4 @@ const Breweries = () => {
   )
 }
 
-export default Breweries;
+export default withAuth(Breweries);
