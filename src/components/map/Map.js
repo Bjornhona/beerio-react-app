@@ -25,7 +25,7 @@ const Map = ({locations, setSelectedBrewery}) => {
   return (
     <div className='google-map' style={{ height: '430px', width: '100%' }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyBymtz6Tua6L_x82tyrNFMNM_BEzMcnfYY' }}
+        bootstrapURLKeys={{ key: process.env.GOOGLE_MAPS_KEY }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
