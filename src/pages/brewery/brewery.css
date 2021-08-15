@@ -18,6 +18,11 @@
 
 .left-brewery-content h6 {
   padding-bottom: var(--m);
+  padding-top: var(--s);
+}
+
+.location-pin {
+  cursor: pointer;
 }
 
 /* --- responsive --- */

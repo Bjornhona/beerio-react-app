@@ -6,7 +6,7 @@ import AboutUsSection from './components/about-us-section/AboutUsSection';
 import Sponsors from './components/sponsors/Sponsors';
 import BeersSection from './components/beers-section/BeersSection';
 import BreweriesSection from './components/breweries-section/BreweriesSection';
-import FoodPairingSection from './components/food-pairing-section/FoodPairingSection';
+import StylesSection from './components/styles-section/StylesSection';
 import headerImage from './beer-1513436_1920.jpg';
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
       <AboutUsSection/>
       <BeersSection/>
       <BreweriesSection/>
-      <FoodPairingSection/>
+      <StylesSection/>
       <Sponsors/>
     </>
   )

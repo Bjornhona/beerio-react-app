@@ -23,9 +23,9 @@ const Brewery = ({breweryState}) => {
           <div className="left-brewery-content">
             <h2>{breweryState.name}.</h2>
             {breweryState.established && <h4>Established in {breweryState.established}</h4>}
-            <h6>{breweryState.website}</h6>
+            {breweryState.website && <a href={breweryState.website}><h6>{breweryState.website}</h6></a>}
             <p>{breweryState.description}</p>
-            <p>{breweryState.mailingListUrl}</p>
+            {breweryState.mailingListUrl && <a href={breweryState.mailingListUrl}><h6>{breweryState.mailingListUrl}</h6></a>}
           </div>
 
           <div className="right-brewery-content">

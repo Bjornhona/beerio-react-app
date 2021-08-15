@@ -44,7 +44,7 @@
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .breweries-search {
     width: calc(var(--xxxl) * 2);
   }

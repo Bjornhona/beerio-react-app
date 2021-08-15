@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="navbar-menu">
           <Link to="/beers"><p>Beers</p></Link>
           <Link to="/breweries"><p>Breweries</p></Link>
-          <Link to="/food-pairing"><p>Food pairing</p></Link>
+          <Link to="/styles"><p>Styles</p></Link>
           <Link to="/favorites"><p>Favorites</p></Link>
           <Link to="/play"><p>Play</p></Link>
         </div>

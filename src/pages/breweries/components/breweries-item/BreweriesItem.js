@@ -19,7 +19,8 @@ const BreweriesItem = ({breweryData, setBrewery}) => {
             <p>{breweryData.established}</p>
           </div>
           <div className="organic">
-            <p><strong>Breweries: </strong>{breweryData.locations && breweryData.locations.length}</p>
+            {breweryData.locations &&
+              <p><strong>Breweries: </strong>{breweryData.locations.length}</p>}
           </div>
         </div>
         <FontAwesomeIcon icon={faChevronRight} className="arrow"/>

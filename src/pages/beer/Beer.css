@@ -20,6 +20,10 @@
   padding-bottom: var(--m);
 }
 
+.left-beer-content h4 {
+  margin-bottom: var(--s);
+}
+
 .left-beer-content h6 {
   padding-bottom: var(--m);
 }

@@ -1,3 +1,8 @@
+.google-map {
+  overflow:hidden;
+  height:0;
+}
+
 .location-pin {
   height: var(--m);
   position: absolute;

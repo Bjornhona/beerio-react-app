@@ -61,7 +61,24 @@ class BeerService {
     .then(({data}) => data)
     .catch(error => console.error('Error'));
   }
-   
+
+  getStyles() {
+    return this.beer.get('/beers/styles')
+    .then(({data}) => data)
+    .catch(error => console.error(error)); 
+  }
+
+  getGlass() {
+    return this.beer.get('/beers/glassware')
+    .then(({data}) => data)
+    .catch(error => console.error(error)); 
+  }
+
+  getCategories() {
+    return this.beer.get('/beers/categories')
+    .then(data => data.data)
+    .catch(error => console.error(error));
+  }
 }
 
 export const beerService = new BeerService();
