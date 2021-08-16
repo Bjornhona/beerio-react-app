@@ -1,0 +1,42 @@
+.members-input {
+  position: relative;
+}
+
+.members-input input {
+  padding: 0;
+}
+
+.members-input input:-webkit-autofill,
+.members-input input:-webkit-autofill:hover,
+.members-input input:-webkit-autofill:focus,
+.members-input input:-webkit-autofill:active {
+ -webkit-box-shadow: 0 0 0 30px var(--medium-brown) inset !important;
+}
+
+.members-input p {
+  position: absolute;
+  bottom: var(--xxs);
+  left: 0;
+  color: var(--red);
+}
+
+.members-input-field {
+  display: flex;
+  border: none;
+  border-bottom: var(--bg-accent) solid 1px;
+  width: 100%;
+  padding: var(--xxs) var(--s);
+  margin-bottom: var(--m);
+}
+
+#members-input-field {
+  width: 100%;
+}
+
+.members-input {
+  padding-right: 0;
+}
+
+.members-input div.alert {
+  border-bottom: 1px solid var(--red);
+}

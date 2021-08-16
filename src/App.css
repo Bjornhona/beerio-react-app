@@ -102,7 +102,7 @@ a {
   text-decoration: none;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], textarea {
   border: none;
   background-color: var(--white);
   font-size: 0.5em;

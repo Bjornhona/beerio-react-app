@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 import { beerService } from '../../lib/beer-service';
+import { withAuth } from '../../lib/authContext';
 import HeaderSection from '../../components/header-section/HeaderSection';
 import headerImage from './beers-1283566_1920.jpg';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
@@ -116,4 +117,4 @@ const Styles = () => {
   );
 };
 
-export default Styles;
+export default withAuth(Styles);

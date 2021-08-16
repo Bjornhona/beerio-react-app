@@ -1,7 +1,7 @@
 import React from 'react';
 import './Dropdown.css';
 import DropdownItem from '../dropdownItem/DropdownItem';
-import { faSignInAlt, faUserPlus, faBeer, faHeart, faGamepad, 
+import { faSignInAlt, faUserPlus, faBeer, faHeart, faAddressCard, 
   faSignOutAlt, faDatabase, faFlask } from '@fortawesome/free-solid-svg-icons';
 import { withAuth } from '../../../lib/authContext';
 
@@ -25,7 +25,7 @@ const Dropdown = (props) => {
       <DropdownItem leftIcon={faDatabase} link={"/breweries"} handleClickItem={handleClickItem}>Breweries</DropdownItem>
       <DropdownItem leftIcon={faFlask} link={"/styles"} handleClickItem={handleClickItem}>Styles</DropdownItem>
       <DropdownItem leftIcon={faHeart} link={"/favorites"} handleClickItem={handleClickItem}>Favorites</DropdownItem>
-      <DropdownItem leftIcon={faGamepad} link={"/play"} handleClickItem={handleClickItem}>Play</DropdownItem>
+      <DropdownItem leftIcon={faAddressCard} link={"/about"} handleClickItem={handleClickItem}>About</DropdownItem>
     </ul>
   )
 }

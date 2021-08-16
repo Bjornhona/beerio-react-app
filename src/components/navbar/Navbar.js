@@ -59,7 +59,7 @@ const Navbar = () => {
           <Link to="/breweries"><p>Breweries</p></Link>
           <Link to="/styles"><p>Styles</p></Link>
           <Link to="/favorites"><p>Favorites</p></Link>
-          <Link to="/play"><p>Play</p></Link>
+          <Link to="/about"><p>About</p></Link>
         </div>
 
         <NavItem icon={faUser} isOpen={openRight} handleOpen={() => handleOpen("right")}>

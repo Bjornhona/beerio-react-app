@@ -1,0 +1,28 @@
+.message-input {
+  position: relative;
+}
+
+.message-input p {
+  position: absolute;
+  bottom: var(--xxs);
+  left: 0;
+  color: var(--red);
+}
+
+.members-input-field {
+  display: flex;
+  border: none;
+  border-bottom: var(--bg-accent) solid 1px;
+  width: 100%;
+  padding: var(--xxs) var(--s);
+  margin-bottom: var(--m);
+}
+
+#message-input-field {
+  width: 100%;
+  padding: 0;
+}
+
+div.alert {
+  border-bottom: 1px solid var(--red);
+}

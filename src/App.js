@@ -12,7 +12,7 @@ import Beers from './pages/beers/Beers';
 import Favorites from './pages/favorites/Favorites';
 import NotFound from './pages/not-found/NotFound';
 import Beer from './pages/beer/Beer';
-import Play from './pages/play/Play';
+import About from './pages/about/About';
 import Breweries from './pages/breweries/Breweries';
 import Styles from './pages/styles/Styles';
 import Navbar from './components/navbar/Navbar';
@@ -34,7 +34,7 @@ const App = () => {
             <PrivateRoute path="/breweries/:id" component={Brewery} />
             <PrivateRoute path="/styles" component={Styles} />
             <PrivateRoute path="/favorites" component={Favorites} />
-            <PrivateRoute path="/play" component={Play} />
+            <PrivateRoute path="/about" component={About} />
           </Switch>
         <Footer/>
         </div>

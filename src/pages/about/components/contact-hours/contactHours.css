@@ -1,0 +1,32 @@
+.contact-hours {
+  .contact-hours-title-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: $S;
+
+    .contact-icon-container {
+      width: $L;
+
+      .contact-icon {
+        color: $main;
+        font-size: $H3;
+      }
+    }
+
+    h4 {
+      @include title($ultraDarkGrey);
+      display: inline-block;
+      margin: 0;
+    }
+  }
+
+  p {
+    @include small-text($ultraDarkGrey);
+    line-height: $H4;
+    margin: 0;
+  }
+
+  .col-left-contact-text p {
+    font-weight: 600;
+  }
+}

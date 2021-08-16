@@ -1,0 +1,33 @@
+.contact-item a p {
+  color: var(--dark-brown);
+  font-weight: 600;
+}
+
+.contact-item a p:hover {
+  color: var(--medium-brown);
+}
+
+.contact-item-title-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--s);
+}
+
+.contact-icon-container {
+  width: var(--m);
+}
+
+.contact-icon-container .contact-icon {
+  color: var(--orange);
+  font-size: 1em;
+}
+
+.contact-icon-containe h4 {
+  display: inline-block;
+  margin: 0;
+}
+
+.contact-icon-containe p {
+  line-height: 1.25em;
+  margin: 0;
+}

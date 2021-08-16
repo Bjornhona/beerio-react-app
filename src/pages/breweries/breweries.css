@@ -26,16 +26,6 @@
   color: var(--lighter-grey);
 }
 
-.back-sign {
-  font-size: 30px;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  padding-right: 20px;
-}
-
 /* --- Responsive --- */
 
 @media (max-width: 767px) {

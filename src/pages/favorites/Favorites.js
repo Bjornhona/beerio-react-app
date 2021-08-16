@@ -5,12 +5,12 @@ import BeersItem from '../../components/beers-item/BeersItem';
 import './Favorites.css';
 import BackButton from '../../components/back-button/BackButton';
 import HeaderSection from '../../components/header-section/HeaderSection';
-import headerImage from '../beers/pexels-pixabay-434311.jpg';
+import headerImage from './beer-4145976_1920.jpg';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
-const Favorites = (props) => {
+const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
