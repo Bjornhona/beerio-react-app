@@ -1,3 +1,7 @@
+.contact-section h2 {
+  margin-bottom: var(--l);
+}
+
 .contact-template {
   display: grid;
   grid-template-columns: 1fr;
@@ -5,8 +9,6 @@
 .contact-template-left {
   padding: var(--l) var(--m) var(--xxl);
   background-color: var(--light-brown);
-  display: grid;
-  grid-row-gap: var(--l);
 }
 
 .contact-template-left h2 {
@@ -16,11 +18,12 @@
 
 .contact-template-right h2 {
   font-size: 2em;
+  color: var(--dark-brown);
 }
 
 .contact-template-right {
   padding: var(--l) var(--m) var(--xxl);
-  background-color: var(--medium-brown);
+  background-color: var(--text-color);
 }
 
 .contact-template-right input,
@@ -36,12 +39,18 @@
   outline: none;
 }
 
+.contact-item {
+  height: calc(var(--xl)*2);
+}
+
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: calc(100% - (var(--xxl) + var(--xxs)));
-  margin-top: var(--l);
+  display: grid;
+  grid-row-gap: var(--m);
+}
+
+.contact-fields {
+  display: grid;
+  grid-row-gap: var(--s);
 }
 
 .contact-form .contact-fields {

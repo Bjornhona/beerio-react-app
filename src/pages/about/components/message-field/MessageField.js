@@ -14,13 +14,13 @@ const MessageField = ({
     }
 
     return (
-        <div className="message-input" data-testid="input-field">
+        <div className="about-input">
             <h5>{title}</h5>
-            <div className={alert ? 'members-input-field alert' : 'members-input-field'}>
+            <div className={alert ? 'about-input-field alert' : 'about-input-field'}>
                 <textarea
-                    id="message-input-field"
-                    name="contact-message"
+                    id="about-input-field"
                     value={defaultInput}
+                    name={inputKey}
                     onChange={targetValue}
                 />
             </div>

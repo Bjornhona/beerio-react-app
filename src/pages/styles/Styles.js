@@ -42,10 +42,12 @@ const Styles = () => {
 
   const handleSelectCategories = (event) => {
     const id = event.target.value;
+    // eslint-disable-next-line
     const filteredStyles = allStyles.filter(style => style.categoryId == id);
     
     setIsCategorized(true);
     setIsStyled(false);
+    // eslint-disable-next-line
     setCategory(categories.filter(category => category.id == id));
     setAllStylesInCategory(filteredStyles);
     setStyles(filteredStyles);
@@ -53,6 +55,7 @@ const Styles = () => {
 
   const handleSelectStyles = (event) => {
     const id = event.target.value;
+    // eslint-disable-next-line
     const filteredStyles = allStyles.filter(style => style.id == id);
 
     setIsStyled(true);

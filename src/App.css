@@ -197,6 +197,12 @@ p {
   color: var(--orange);
 }
 
+@media (max-width: 320px) {
+  .inner-content h2 {
+    font-size: 2em;
+  }
+}
+
 @media (max-width: 575px) {
   .inner-content {
     width: 100%;

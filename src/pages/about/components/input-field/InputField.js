@@ -13,15 +13,16 @@ const InputField = ({
   }
 
   return (
-    <div className="members-input" data-testid="input-field">
+    <div className="about-input">
       <h5>{title}</h5>
       <div
-        className={alert ? 'members-input-field alert' : 'members-input-field'}
+        className={alert ? 'about-input-field alert' : 'about-input-field'}
       >
         <input
-          id="members-input-field"
+          id="about-input-field"
           type="text"
           value={defaultInput}
+          name={inputKey}
           onChange={targetValue}
         />
       </div>

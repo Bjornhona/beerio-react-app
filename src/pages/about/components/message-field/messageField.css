@@ -1,24 +1,24 @@
-.message-input {
+.about-input {
   position: relative;
+  height: calc(var(--xl)*2);
 }
 
-.message-input p {
+.about-input p {
   position: absolute;
   bottom: var(--xxs);
   left: 0;
   color: var(--red);
 }
 
-.members-input-field {
+.about-input-field {
   display: flex;
   border: none;
   border-bottom: var(--bg-accent) solid 1px;
   width: 100%;
   padding: var(--xxs) var(--s);
-  margin-bottom: var(--m);
 }
 
-#message-input-field {
+#about-input-field {
   width: 100%;
   padding: 0;
 }
