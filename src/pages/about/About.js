@@ -210,9 +210,8 @@ const handleButtonClick = (e) => {
           </div>
 
         </div>
-
-        <BackButton/>
       </div>
+      <BackButton/>
     </>
   );
 }
