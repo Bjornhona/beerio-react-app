@@ -2,7 +2,6 @@ import React, {useRef, useEffect, useState} from 'react';
 import './Navbar.css';
 import NavItem from './nav-item/NavItem';
 import Dropdown from './dropdown/Dropdown';
-import { faUser, faBars } from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';
 
 const Navbar = () => {
@@ -45,7 +44,7 @@ const Navbar = () => {
     <nav className='navbar' ref={node}>
       <ul className='navbar-nav'>
         <span className="left-nav-item">
-          <NavItem icon={faBars} isOpen={openLeft} handleOpen={() => handleOpen("left")}>
+          <NavItem icon="bars" isOpen={openLeft} handleOpen={() => handleOpen("left")}>
             <Dropdown menuLeft handleClickItem={handleClickItem} />
           </NavItem>
         </span>
@@ -62,7 +61,7 @@ const Navbar = () => {
           <Link to="/about"><p>About</p></Link>
         </div>
 
-        <NavItem icon={faUser} isOpen={openRight} handleOpen={() => handleOpen("right")}>
+        <NavItem icon="user" isOpen={openRight} handleOpen={() => handleOpen("right")}>
           <Dropdown menuRight handleClickItem={handleClickItem} />
         </NavItem>
       </ul>

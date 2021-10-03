@@ -3,7 +3,6 @@ import './breweries.css';
 import { withAuth } from '../../lib/authContext';
 import { beerService } from '../../lib/beer-service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import headerImage from './brew-1031484_1920.jpg';
 import HeaderSection from '../../components/header-section/HeaderSection';
 import BackButton from '../../components/back-button/BackButton';
@@ -82,7 +81,7 @@ const Breweries = () => {
 
           <div className="breweries-searchboxes">
             <div className="breweries-search">
-              <FontAwesomeIcon className="search-icon" icon={faSearch}/>
+              <FontAwesomeIcon className="search-icon" icon="search"/>
               <input  type="text"
                       name="name" 
                       value={inputValue} 
@@ -91,7 +90,7 @@ const Breweries = () => {
             </div>
 
             <div className="breweries-search">
-              <FontAwesomeIcon className="search-icon" icon={faSearch}/>
+              <FontAwesomeIcon className="search-icon" icon="search"/>
               <input  type="text" 
                       value={zipCode} 
                       onChange={handleInputChange}

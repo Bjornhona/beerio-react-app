@@ -6,7 +6,6 @@ import './Beers.css';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
 import HeaderSection from '../../components/header-section/HeaderSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import headerImage from './pexels-pixabay-434311.jpg';
 import BackButton from '../../components/back-button/BackButton';
 
@@ -46,7 +45,7 @@ const Beers = () => {
         <div className="beers-div-header">
           <h2>Find your beers.</h2>
           <div className="beers-search">
-            <FontAwesomeIcon className="search-icon" icon={faSearch}/>
+            <FontAwesomeIcon className="search-icon" icon="search"/>
             <input  type="text"
                     name="name" 
                     value={inputValue} 

@@ -2,7 +2,6 @@ import React from 'react';
 import './beersSection.css';
 import Button from '../../../../components/button/Button';
 import MeasureItem from '../measure-item/MeasureItem';
-import {faHeart, faBeer, faSkull} from '@fortawesome/free-solid-svg-icons';
 import worldImage from "./world-map-146505_1280.png";
 import beerSplashImage from "./water-2748670_1920(1).png";
 import beerGlassImage from "./beer-3622242_1920.png";
@@ -34,19 +33,19 @@ const BeersSection = () => {
 
         <div className="right-beers-content">
           <MeasureItem 
-            measureIcon={faHeart} 
+            measureIcon="heart" 
             measureDescription="My Favorites" 
             measureIconColor={rootStyles.getPropertyValue('--red')}
             measureValue="25"
           />
           <MeasureItem 
-            measureIcon={faBeer} 
+            measureIcon="beer" 
             measureDescription="Wanna try" 
             measureIconColor={rootStyles.getPropertyValue('--yellow')}
             measureValue="64"
           />
           <MeasureItem 
-            measureIcon={faSkull} 
+            measureIcon="skull" 
             measureDescription="Never again" 
             measureIconColor={rootStyles.getPropertyValue('--lighter-brown')}
             measureValue="12"

@@ -19,6 +19,15 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Brewery from './pages/brewery/BreweryContainer';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch, faHeart, faUser, faBars, faSignInAlt, faUserPlus, faAddressCard, faSignOutAlt, faDatabase, faFlask,
+  faBeer, faSkull, faGlobeAmericas, faMapMarkedAlt, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import {faHeart as outlinedHeart} from '@fortawesome/free-regular-svg-icons';
+import {faFacebook, faInstagram, faYoutube, faTwitter} from '@fortawesome/free-brands-svg-icons';
+
+library.add( faSearch, faHeart, outlinedHeart, faUser, faBars, faBeer, faSkull, faFlask, faChevronLeft,
+  faDatabase, faGlobeAmericas, faMapMarkedAlt, faFacebook, faInstagram, faYoutube, faTwitter, faSignInAlt, faUserPlus, faAddressCard, faSignOutAlt,);
+
 const App = () => {
 
   const defaultRoutes = () => {

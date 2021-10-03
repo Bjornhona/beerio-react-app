@@ -8,7 +8,6 @@ import HeaderSection from '../../components/header-section/HeaderSection';
 import headerImage from './beer-4145976_1920.jpg';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -50,7 +49,7 @@ const Favorites = () => {
         <div className="beers-div-header">
           <h2>Find your favorites.</h2>
           <div className="beers-search">
-            <FontAwesomeIcon className="search-icon" icon={faSearch}/>
+            <FontAwesomeIcon className="search-icon" icon="search"/>
             <input  type="text"
                     name="name" 
                     value={inputValue} 
@@ -60,12 +59,12 @@ const Favorites = () => {
         </div>
       {isLoading ? 
         <LoadingScreen /> : 
-        favorites && favorites.length < 1 ? 
+        ((favorites && favorites.length < 1) || (filtered && filtered.length < 1)) ? 
           <div className="no-response">
             <p>You have not selected any favorites yet or no favorites matched your search.</p>
           </div> : 
           <div className="beers-item-container"> 
-            {filtered.map(item => {
+            {filtered && filtered.map(item => {
                 const {id, name, isOrganic, icon, style} = item;
                 return (
                   <BeersItem 

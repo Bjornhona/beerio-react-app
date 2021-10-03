@@ -2,7 +2,6 @@ import React from 'react';
 import './breweriesSection.css';
 import Button from '../../../../components/button/Button';
 import MeasureItem from '../measure-item/MeasureItem';
-import {faGlobeAmericas, faMapMarkedAlt, faSkull} from '@fortawesome/free-solid-svg-icons';
 import backgroundColorImage from "./watercolor-4629348_1920(1).png";
 import brewerySplashImage from "./water-2748695_1920(1).png";
 import barrelImage from "./barrel-1875819_1920.png";
@@ -32,21 +31,21 @@ const BreweriesSection = () => {
 
         <div className="left-breweries-content">
           <MeasureItem 
-            measureIcon={faGlobeAmericas} 
+            measureIcon="globe-americas"
             measureDescription="Great place" 
             measureIconColor={rootStyles.getPropertyValue('--green')}
             measureValue="15"
             left
           />
           <MeasureItem 
-            measureIcon={faMapMarkedAlt} 
+            measureIcon="map-marked-alt" 
             measureDescription="Wanna go" 
             measureIconColor={rootStyles.getPropertyValue('--orange')}
             measureValue="23"
             left
           />
           <MeasureItem 
-            measureIcon={faSkull} 
+            measureIcon="skull" 
             measureDescription="No go" 
             measureIconColor={rootStyles.getPropertyValue('--dark-brown')}
             measureValue="9"

@@ -74,18 +74,18 @@ const Beer = () => {
             </div>
 
             {labels &&
-            <div className="right-beer-content">
-              <div><img className="big-label-img" src={labels.large} alt="big beer label"/></div>
-            </div>}
+              <div className="right-beer-content">
+                <div><img className="big-label-img" src={labels.large} alt="big beer label"/></div>
+              </div>}
           </div>
         </div>
         <div className="bottom-beer-content beer-section outer-content">
-              <div className="beer-info">
-                <div><strong>Abv: </strong>{abv}%</div>
-                <div><strong>Ibu: </strong>{style && style.ibuMax}</div>
-                <div><strong>Organic Beer:</strong> {newIsOrganic}</div>
-              </div>
-            </div>
+          <div className="beer-info">
+            <div><strong>Abv: </strong>{abv}%</div>
+            <div><strong>Ibu: </strong>{style && style.ibuMax}</div>
+            <div><strong>Organic Beer:</strong> {newIsOrganic}</div>
+          </div>
+        </div>
         <BackButton />
       </>}
     </>

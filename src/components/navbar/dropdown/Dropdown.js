@@ -1,8 +1,6 @@
 import React from 'react';
 import './Dropdown.css';
 import DropdownItem from '../dropdownItem/DropdownItem';
-import { faSignInAlt, faUserPlus, faBeer, faHeart, faAddressCard, 
-  faSignOutAlt, faDatabase, faFlask } from '@fortawesome/free-solid-svg-icons';
 import { withAuth } from '../../../lib/authContext';
 
 const Dropdown = (props) => {
@@ -13,19 +11,19 @@ const Dropdown = (props) => {
       isLogged ?
         <ul className="dropdown dropdownRight">
           <li className="hi-user"><h6>Hi, {user.username}</h6></li>
-          <DropdownItem leftIcon={faSignOutAlt} link={"/login"} logout={logout} handleClickItem={handleClickItem}>Logout</DropdownItem>
+          <DropdownItem leftIcon="sign-out-alt" link={"/login"} logout={logout} handleClickItem={handleClickItem}>Logout</DropdownItem>
         </ul>
       :
       <ul className="dropdown dropdownRight">
-        <DropdownItem leftIcon={faSignInAlt} link={"/login"} handleClickItem={handleClickItem}>Login</DropdownItem>
-        <DropdownItem leftIcon={faUserPlus} link={"/signup"} handleClickItem={handleClickItem}>Signup</DropdownItem>
+        <DropdownItem leftIcon="sign-in-alt" link={"/login"} handleClickItem={handleClickItem}>Login</DropdownItem>
+        <DropdownItem leftIcon="user-plus" link={"/signup"} handleClickItem={handleClickItem}>Signup</DropdownItem>
       </ul> :
     <ul className="dropdown dropdownLeft">
-      <DropdownItem leftIcon={faBeer} link={"/beers"} handleClickItem={handleClickItem}>Beers</DropdownItem>
-      <DropdownItem leftIcon={faDatabase} link={"/breweries"} handleClickItem={handleClickItem}>Breweries</DropdownItem>
-      <DropdownItem leftIcon={faFlask} link={"/styles"} handleClickItem={handleClickItem}>Styles</DropdownItem>
-      <DropdownItem leftIcon={faHeart} link={"/favorites"} handleClickItem={handleClickItem}>Favorites</DropdownItem>
-      <DropdownItem leftIcon={faAddressCard} link={"/about"} handleClickItem={handleClickItem}>About</DropdownItem>
+      <DropdownItem leftIcon="beer" link={"/beers"} handleClickItem={handleClickItem}>Beers</DropdownItem>
+      <DropdownItem leftIcon="database" link={"/breweries"} handleClickItem={handleClickItem}>Breweries</DropdownItem>
+      <DropdownItem leftIcon="flask" link={"/styles"} handleClickItem={handleClickItem}>Styles</DropdownItem>
+      <DropdownItem leftIcon="heart" link={"/favorites"} handleClickItem={handleClickItem}>Favorites</DropdownItem>
+      <DropdownItem leftIcon="address-card" link={"/about"} handleClickItem={handleClickItem}>About</DropdownItem>
     </ul>
   )
 }

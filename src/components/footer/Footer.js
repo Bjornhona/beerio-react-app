@@ -1,7 +1,6 @@
 import React from "react";
 import './footer.css';
 import NavItem from '../navbar/nav-item/NavItem';
-import {faFacebookF, faInstagram, faYoutube, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import {Link} from 'react-router-dom';
 
 const Footer = () => {
@@ -12,10 +11,10 @@ const Footer = () => {
       </div>
 
       <div className="social-media">
-        <NavItem className='icon-left' icon={faFacebookF} />
-        <NavItem className='icon-left' icon={faInstagram} />
-        <NavItem className='icon-left' icon={faYoutube} />
-        <NavItem className='icon-left' icon={faTwitter} />
+        <NavItem className='icon-left' icon={["fab", "facebook"]} />
+        <NavItem className='icon-left' icon={["fab", "instagram"]} />
+        <NavItem className='icon-left' icon={["fab", "youtube"]} />
+        <NavItem className='icon-left' icon={["fab", "twitter"]} />
       </div>
 
       <div className="footer-navbar-menu">
