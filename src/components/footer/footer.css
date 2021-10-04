@@ -19,7 +19,8 @@
 }
 
 .footer-navbar-menu a {
-  font-family: Montserrat-Bold, 'Times Sans Serif', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   color: var(--light-brown);
   text-transform: uppercase;
   padding: var(--xs) var(--s);
