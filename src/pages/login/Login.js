@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './Login.css';
 import auth from '../../lib/auth-service';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { withAuth } from '../../lib/authContext';
 import Button from '../../components/button/Button';
 
 const Login = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -20,10 +20,9 @@ const Login = (props) => {
     auth.login({ username, password })
     .then((user) => {
       props.setUser(user);
-      history.push('/home'); 
+      navigate.push('/home'); 
     })
     .catch(error => {
-      console.error('Error');
       const { data } = error.response;
       switch(data.error){
         case 'not-found':

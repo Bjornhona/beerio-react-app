@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AuthContext from './lib/authContext';
 import PrivateRoute from './components/PrivateRoute';
@@ -30,22 +30,23 @@ library.add( faSearch, faHeart, outlinedHeart, faUser, faBars, faBeer, faSkull, 
 
 const App = () => {
 
-  const defaultRoutes = () => {
+  const DefaultRoutes = () => {
     return (
       <div>
         <Navbar/>
         <div className="body-content">
-          <Switch>
-            <PrivateRoute path="/home" component={Home} />
-            <PrivateRoute exact path="/beers" component={Beers} />
-            <PrivateRoute path="/beers/:id" component={Beer} />
-            <PrivateRoute exact path="/breweries" component={Breweries} />
-            <PrivateRoute path="/breweries/:id" component={Brewery} />
-            <PrivateRoute path="/styles" component={Styles} />
-            <PrivateRoute path="/favorites" component={Favorites} />
-            <PrivateRoute path="/about" component={About} />
-          </Switch>
-        <Footer/>
+          <Routes>
+            <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
+            <Route path="/beers" element={<PrivateRoute><Beers /></PrivateRoute>} />
+            <Route path="/beers/:id" element={<PrivateRoute><Beer /></PrivateRoute>} />
+            <Route path="/breweries" element={<PrivateRoute><Breweries /></PrivateRoute>} />
+            <Route path="/breweries/:id" element={<PrivateRoute><Brewery /></PrivateRoute>} />
+            <Route path="/styles" element={<PrivateRoute><Styles /></PrivateRoute>} />
+            <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
+            <Route path="/about" element={<PrivateRoute><About /></PrivateRoute>} />
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+          <Footer/>
         </div>
       </div>
     )
@@ -54,13 +55,12 @@ const App = () => {
   return (
     <AuthContext>
       <div className="app" data-testid="app">
-        <Switch>
-          <Route exact path="/" component={Index} />
-          <PublicRoute path="/signup" component={Signup} />
-          <PublicRoute path="/login" component={Login} />
-          <Route component={defaultRoutes}/>
-          <Route component={NotFound} />
-         </Switch>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/signup" element={<PublicRoute><Signup /></PublicRoute>} />
+          <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+          <Route path="/*" element={<DefaultRoutes />} />
+         </Routes>
       </div>
     </AuthContext>
   );

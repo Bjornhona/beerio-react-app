@@ -19,12 +19,12 @@ const Signup = (props) => {
 
     auth.signup({ username, password })
       .then((user) => {
+        console.log(user);
         setState(prevState => ({ ...prevState, username: '', password: '' }));
         props.setUser(user);
         props.history.push('/home');
       })
       .catch( error => {
-        console.error('Error');
         const { data } = error.response;
         switch(data.error){
           case 'empty':
@@ -45,6 +45,7 @@ const Signup = (props) => {
   }
 
   const { username, password, alert } = state;
+
   return (
     <div className="signup-div">
       <span className="signup-box">

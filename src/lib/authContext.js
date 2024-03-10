@@ -25,7 +25,6 @@ const AuthContext = (props) => {
     const getAuthService = async () => {
       try {
         const user = await authService.me();
-        // User found as "user"
         if (!ignore) {
           setUser(user);
           setIsLogged(true);
@@ -33,7 +32,6 @@ const AuthContext = (props) => {
         }
       }
       catch (error) {
-        // User not found and set to null
         setIsLogged(false);
         setUser(null);
         setIsLoading(false);

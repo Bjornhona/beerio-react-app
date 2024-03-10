@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { withAuth } from '../../lib/authContext';
-import { useRouteMatch, Redirect } from 'react-router-dom';
+import { useMatch, Navigate } from 'react-router-dom';
 import './Beer.css';
 import { beerService } from '../../lib/beer-service';
 import LoadingScreen from '../../components/loading-screen/LoadingScreen';
@@ -10,7 +10,7 @@ import HeaderSection from '../../components/header-section/HeaderSection';
 import BackButton from '../../components/back-button/BackButton';
 
 const Beer = () => {
-  let match = useRouteMatch();
+  let match = useMatch();
   const {id} = match.params;
   
   const [beerData, setBeerData] = useState([]);
@@ -52,7 +52,7 @@ const Beer = () => {
         image={headerImage}/>
 
       {isLoading ? <LoadingScreen /> :
-      redirect ? <Redirect to='/notfound'/> :
+      redirect ? <Navigate to='/notfound'/> :
       <>
         <div className="beer-section outer-content">
           <div className="beer-content">
