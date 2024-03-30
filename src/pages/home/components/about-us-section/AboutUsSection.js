@@ -9,19 +9,19 @@ import image4 from './brew-1031484_1920 (1).jpg';
 const AboutUsSection = () => {
   const cards = [
     {
-      text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.",
+      text: "The best beers in the world offer exceptional flavors, balance, and craftsmanship, representing diverse traditions and innovative brewing techniques. Cheers!",
       image: image1
     },
     {
-      text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.",
+      text: "Beer styles encompass diverse flavors, aromas, and brewing techniques, ranging from hoppy IPAs to rich stouts, each with unique characteristics.",
       image: image2
     },
     {
-      text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.",
+      text: "The best beer flavors encompass a spectrum of sensations: from crisp and refreshing to rich and complex, satisfying every taste bud.",
       image: image3
     },
     {
-      text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.",
+      text: "The best breweries in the world craft exceptional brews, blending tradition with innovation, and embodying a commitment to quality and excellence.",
       image: image4
     }
   ];
