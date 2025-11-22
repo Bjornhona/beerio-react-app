@@ -3,7 +3,7 @@ import axios from 'axios';
 class BeerService {
   constructor() {
     this.beer = axios.create({
-      baseURL: process.env.REACT_APP_BASEURL,
+      baseURL: import.meta.env.VITE_BASEURL,
       withCredentials: true
     })
   }

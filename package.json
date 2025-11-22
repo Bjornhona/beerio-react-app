@@ -18,15 +18,15 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.0.4",
     "react-router-dom": "^6.21.0",
-    "react-scripts": "^5.0.1",
     "redux": "^5.0.0",
     "redux-persist": "^6.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vite test",
+    "eject": "vite eject"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -53,5 +53,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://beerio-aa491.web.app/"
+  "proxy": "https://beerio-aa491.web.app/",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.4"
+  }
 }

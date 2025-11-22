@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "beerio-aa491"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
